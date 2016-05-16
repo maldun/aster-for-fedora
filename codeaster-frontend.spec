@@ -13,7 +13,6 @@ Source0:        https://bitbucket.org/code_aster/codeaster-frontend/codeaster-fr
 
 
 BuildRequires: python
-BuildRequires: bash
 BuildRequires: python-setuptools
 
 Requires(post): info
@@ -31,14 +30,20 @@ This is the Code_Aster Frontend package, which provides the program structure fo
 %install
 %{__python} setup.py install --prefix=%{buildroot}/%{aster_root}
 
+mkdir -p ${RPM_BUILD_ROOT}%{_bindir}
+ln -sf %{aster_root}/bin/astk %{buildroot}/%{_bindir}
+ln -sf %{aster_root}/bin/as_run %{buildroot}/%{_bindir}
+
 %post
 
 %preun
 
 %files
-# %defattr(-,root,root)
+%defattr(-,root,root)
 %doc README TODO
 %{aster_root}/*
+%{_bindir}/astk
+%{_bindir}/as_run
 
 %clean
 #rm -rf $RPM_BUILD_ROOT
