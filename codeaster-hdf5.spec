@@ -22,7 +22,7 @@ BuildRequires: libtool
 BuildRequires: openssh-clients
 
 %description
-This is the Code_Aster Frontend package, which provides the program structure for a full Code_Aster installation
+This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for code_aster
 
 %prep
 %setup -q
@@ -45,10 +45,11 @@ This is the Code_Aster Frontend package, which provides the program structure fo
 mkdir -p %{buildroot}%{_prefix}
 
 #Serial build
-export CFLAGS=-std=gnu9x
+export CFLAGS='-std=gnu9x -fno-stack-protector -O2 -fPIC'
 export CC=gcc
 export CXX=g++
 export F9X=gfortran
+export LDFLAGS='-L/usr/lib64/ -lopenblas'
 %{_configure} %{configure_opts} --enable-cxx --prefix=%{_prefix}
 make
 
