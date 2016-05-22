@@ -18,12 +18,13 @@ Source0:        codeaster-mfront-%{version}.tar.gz
 BuildRequires:	cmake python boost-python
 
 %description
-Le générateur de code mfront: présentation générale et application
-aux propriétés matériau et aux modèles
+MFront is a code generator which translates a set of
+closely related domain specific languages into plain C++ on top of the
+TFEL library
 
 %prep
 %setup -q
-cmake -DCMAKE_BUILD_TYPE=Release -Dlocal-castem-header=ON -Denable-fortran=ON -Denable-aster=ON -Denable-python=ON -Denable-python-bindings=ON -DCMAKE_INSTALL_PREFIX=%{buildroot}%{_prefix}
+cmake -DCMAKE_BUILD_TYPE=Release -Dlocal-castem-header=ON -Denable-fortran=ON -Ddisable-reference-doc=ON -Ddisable-website=ON -Denable-aster=ON -Denable-python=ON -Denable-python-bindings=ON -Denable-portable-build=ON -DCMAKE_INSTALL_PREFIX=%{buildroot}%{_prefix}
 
 %build
 make
