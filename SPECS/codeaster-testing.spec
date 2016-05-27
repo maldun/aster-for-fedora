@@ -5,22 +5,20 @@
 %global aster_root /opt/Code_Aster/aster_root
 %global aster_libs /usr/lib64/codeaster/
 %define debug_package %{nil}
-%global _prefix %{aster_root}/%{major_version}mpi
-%global config_file codeaster_fedora_gnu_mpi_pack
+%global _prefix %{aster_root}/%{major_version}
+%global config_file codeaster_fedora_gnu_config
 
-Name:           codeaster-testing-openmpi
+Name:           codeaster-testing
 Version:        %{version}
 Release:        1%{?dist}
-Summary:	    Code_Aster finite element method solver. Testing version. With OpenMPI support.
+Summary:	    Code_Aster finite element method solver. Testing version.
 
 License:        GPL2
 URL:            http://www.code-aster.org
-Source0:        codeaster-testing-openmpi-%{version}.tar.gz
+Source0:        codeaster-testing-%{version}.tar.gz
 Source1:        %{config_file}.py
 
-AutoReqProv: no
-
-BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel codeaster-frontend codeaster-mfront openmpi openmpi-devel codeaster-petsc-openmpi
+BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel codeaster-frontend codeaster-mfront
 
 %description
 Code_Aster offers a full range of multiphysical analysisand modelling methods that go well beyond the standard
@@ -43,9 +41,12 @@ rm -rf %{buildroot}
 ./waf install -p
 cp -r astest %{buildroot}%{_prefix}
 %post
-echo "vers : %{major_version}mpi:%{aster_root}/%{major_version}mpi/share/aster" >> %{aster_root}/etc/codeaster/aster
+echo "vers : %{major_version}:%{aster_root}/%{major_version}/share/aster" >> %{aster_root}/etc/codeaster/aster
 
 %preun
+
+%postun
+sed --in-place '\|vers : %{major_version}:%{aster_root}/%{major_version}/share/aster|d' %{aster_root}/etc/codeaster/aster
 
 %files
 %{_prefix}/*

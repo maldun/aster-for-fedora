@@ -21,7 +21,8 @@ Source0:        codeaster-petsc-openmpi-%{version}.tar.gz
 
 BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel openmpi openmpi-devel codeaster-scalapack-openmpi codeaster-hdf5
 BuildRequires:  gcc-c++ gcc-gfortran
-BuildRequires:  openblas-devel openssl-devel zlib-devel hypre-openmpi-devel
+BuildRequires:  openblas-devel openssl-devel zlib-devel
+BuildRequires:  hypre-openmpi-devel hypre-devel SuperLU-devel
 
 %description
 PETSc is the "Portable Extensible Toolkit for Scientific Computation",\
