@@ -12,3 +12,8 @@ Goal:
  * 1) Make aster-full package obsolete in Fedora, i.e. Make enough packages to build new versions of aster with only downloading aster-frontend and aster-src. Make outoconfig scripts
  * 2) make package for aster-sequential version
  * 3) make package for aster-parallel version
+ 
+ ToDo:
+ 
+   * PETSc still has no Hypre and ML support
+   * gibi is missing
