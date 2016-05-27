@@ -41,7 +41,6 @@ export PATH=%{aster_libs}/mfront-%{mfront_version}/bin:$PATH; export LD_LIBRARY_
 %install
 rm -rf %{buildroot}
 ./waf install -p
-cp -r astest %{buildroot}%{_prefix}
 %post
 echo "vers : %{major_version}mpi:%{aster_root}/%{major_version}mpi/share/aster" >> %{aster_root}/etc/codeaster/aster
 
