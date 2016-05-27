@@ -7,6 +7,7 @@
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}mpi
 %global config_file codeaster_fedora_gnu_mpi_pack
+%global mpidir /usr/lib64/openmpi
 
 Name:           codeaster-testing-openmpi
 Version:        %{version}
@@ -44,6 +45,11 @@ rm -rf %{buildroot}
 %post
 echo "vers : %{major_version}mpi:%{aster_root}/%{major_version}mpi/share/aster" >> %{aster_root}/etc/codeaster/aster
 
+echo "MPI_DIR=%{mpidir}" >> %{aster_root}/etc/codeaster/profile_local.sh
+echo "LD_LIBRARY_PATH=\$MPI_DIR/lib:\$LD_LIBRARY_PATH" >> %{aster_root}/etc/codeaster/profile_local.sh
+echo "PATH=\$MPI_DIR/bin:\$PATH" >> %{aster_root}/etc/codeaster/profile_local.sh
+
+
 %preun
 
 %files
@@ -51,7 +57,9 @@ echo "vers : %{major_version}mpi:%{aster_root}/%{major_version}mpi/share/aster" 
 
 %postun
 sed --in-place '\|vers : %{major_version}mpi:%{aster_root}/%{major_version}mpi/share/aster|d' %{aster_root}/etc/codeaster/aster
-
+sed --in-place '\|MPI_DIR=%{mpidir}|d' %{aster_root}/etc/codeaster/profile_local.sh
+sed --in-place '\|LD_LIBRARY_PATH=$MPI_DIR/lib:$LD_LIBRARY_PATH|d' %{aster_root}/etc/codeaster/profile_local.sh
+sed --in-place '\|PATH=$MPI_DIR/bin:$PATH|d' %{aster_root}/etc/codeaster/profile_local.sh
 %clean
 #rm -rf $RPM_BUILD_ROOT
 
