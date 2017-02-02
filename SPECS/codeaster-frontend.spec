@@ -1,17 +1,17 @@
-%global aster_root /opt/Code_Aster/aster_root
+%global aster_root /cad/app/aster
 %global aster_libs %{_libdir}/codeaster
 %global metis_version 4.0.3
 %define debug_package %{nil}
 
 
 Name:           codeaster-frontend
-Version:        1.13.7
+Version:        1.13.9
 Release:        1%{?dist}
 Summary:        The Code_Aster-Frontend Package/Structure
 
 License:        GPLv2
 URL:            https://bitbucket.org/code_aster/codeaster-frontend
-Source0:        https://bitbucket.org/code_aster/codeaster-frontend/codeaster-frontend-1.13.7.tar.gz
+Source0:        https://bitbucket.org/code_aster/codeaster-frontend/codeaster-frontend-1.13.9.tar.gz
 Source1:        codeaster_asrun
 Source2:        codeaster_profile_local.sh
 
@@ -71,6 +71,6 @@ ln -sf %{aster_libs}/metis-%{metis_version}/bin/kmetis pmetis
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Thu May 12 2016 Stefan Reiterer 1.13.7-1
+* Thu May 12 2016 Stefan Reiterer 1.13.9-1
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
