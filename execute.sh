@@ -20,7 +20,7 @@ mkdir -p ${EXTLIBS}
 # Downloads
 #########################
 
-cd /tmp/
+cd ${DOWNL}
 #wget http://www.code-aster.org/FICHIERS/aster-full-src-${ASTER_FULL}.noarch.tar.gz
 
 #########################

@@ -4,6 +4,7 @@
 
 source "$(dirname "$0")"/variables.sh
 
+cd ${DOWNL}
 cd aster-full-src-${ASTER_SUB}/SRC
 
 tar -xvf ${HDF}.tar.gz
