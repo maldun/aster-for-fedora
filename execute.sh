@@ -7,7 +7,7 @@
 export ASTER_BASE=/cad/app/aster
 export ASTER_VER=12.7
 export ASTER_SUB=${ASTER_VER}.0
-export ASTER_FULL=aster-full-src-${ASTER_VER}0-1.noarch.tar.gz
+export ASTER_FULL=aster-full-src-${ASTER_SUB}-1.noarch.tar.gz
 export ASTER_ROOT=${ASTER_BASE}/${ASTER_VER}
 export EXTLIBS=${ASTER_BASE}/extlibs/
 
@@ -37,7 +37,7 @@ cd /tmp/
 # Unpack
 #########################
 
-tar -xvf aster-full-src-${ASTER_FULL}.noarch.tar.gz
+tar -xvf ${ASTER_FULL}
 cd aster-full-src-${ASTER_SUB}/SRC
 tar -xvf ${HDF}.tar.gz
 mv ${HDF} codeaster-${HDF}
