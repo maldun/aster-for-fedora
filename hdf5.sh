@@ -11,5 +11,5 @@ tar -xvf ${HDF}.tar.gz
 mv ${HDF} codeaster-${HDF}
 tar cvzf codeaster-${HDF}.tar.gz codeaster-${HDF}
 cp codeaster-${HDF}.tar.gz ${SOURCE_DIR}
-cd ${SPECS}
+cd ${SPEC_DIR}
 QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-hdf5.spec
