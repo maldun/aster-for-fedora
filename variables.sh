@@ -13,3 +13,9 @@ export EXTLIBS=${ASTER_BASE}/extlibs/
 
 export BUILD_DIR=${HOME}/rpmbuild
 export SOURCE_DIR={BUILD_DIR}/SOURCES
+
+###################
+# Packages        #
+###################
+
+export HDF=hdf5-1.8.14

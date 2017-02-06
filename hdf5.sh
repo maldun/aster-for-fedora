@@ -6,7 +6,6 @@ source variables.sh
 
 cd aster-full-src-${ASTER_SUB}/SRC
 
-export HDF=hdf5-1.8.14
 tar -xvf ${HDF}.tar.gz
 mv ${HDF} codeaster-${HDF}
 tar cvzf codeaster-${HDF}.tar.gz codeaster-${HDF}
