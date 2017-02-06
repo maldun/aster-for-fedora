@@ -77,7 +77,7 @@ rm $RPM_BUILD_ROOT/%{_prefix}/lib/*.la
 %{_prefix}/bin/h5repart
 %{_prefix}/bin/h5stat
 %{_prefix}/bin/h5unjam
-%{_prefix}/lib/*.so.7*
+%{_prefix}/lib/*.so.9*
 %{_prefix}/lib/*.so
 %{_prefix}/lib/*.a
 %{_prefix}/lib/libhdf5.settings
