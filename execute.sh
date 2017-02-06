@@ -1,18 +1,7 @@
 #!/bin/bash
 
-###################
-# Variables       #
-###################
+source variables.sh
 
-export ASTER_BASE=/cad/app/aster
-export ASTER_VER=12.7
-export ASTER_SUB=${ASTER_VER}.0
-export ASTER_FULL=aster-full-src-${ASTER_SUB}-1.noarch.tar.gz
-export ASTER_ROOT=${ASTER_BASE}/${ASTER_VER}
-export EXTLIBS=${ASTER_BASE}/extlibs/
-
-export BUILD_DIR=${HOME}/rpmbuild
-export SOURCE_DIR={BUILD_DIR}/SOURCES
 
 ################
 # Paths        #
@@ -41,13 +30,3 @@ cd /tmp/
 tar -xvf ${ASTER_FULL}
 cd aster-full-src-${ASTER_SUB}/SRC
 
-#########################
-# HDF 5
-#########################
-
-export HDF=hdf5-1.8.14
-tar -xvf ${HDF}.tar.gz
-mv ${HDF} codeaster-${HDF}
-tar cvzf codeaster-${HDF}.tar.gz codeaster-${HDF}
-mv codeaster-${HDF}.tar.gz ${SOURCE_DIR}
-#QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-hdf5.spec
