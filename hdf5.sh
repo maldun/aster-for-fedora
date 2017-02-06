@@ -2,7 +2,7 @@
 # HDF 5
 #########################
 
-source variables.sh
+source "$(dirname "$0")"/variables.sh
 
 cd aster-full-src-${ASTER_SUB}/SRC
 
