@@ -1,5 +1,5 @@
-%global version 1.8.10
-%global aster_root /opt/Code_Aster/aster_root
+%global version 1.8.14
+%global aster_root /cad/app/aster
 %global aster_libs codeaster
 %define debug_package %{nil}
 
@@ -11,7 +11,7 @@ Summary:        hdf5 lib specific for Code_Aster
 
 License:        BSD
 URL:            http://code-aster.org/
-Source0:        codeaster-hdf5-1.8.10.tar.gz
+Source0:        codeaster-hdf5-1.8.14.tar.gz
 
 
 BuildRequires: krb5-devel, openssl-devel, zlib-devel, gcc-gfortran, time
