@@ -22,6 +22,7 @@ export EXTLIBS=${ASTER_BASE}/extlibs/
 export DOWNL=/tmp/
 export BUILD_DIR=${HOME}/rpmbuild
 export SOURCE_DIR=${BUILD_DIR}/SOURCES
+export SPEC_DIR=${BUILD_DIR}/SPECS
 
 ###################
 # Packages        #
