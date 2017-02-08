@@ -1,5 +1,5 @@
 %global aster_root /cad/app/aster
-%global aster_libs %{_libdir}/codeaster
+%global aster_libs %{aster_root}/lib
 %global metis_version 4.0.3
 %define debug_package %{nil}
 
