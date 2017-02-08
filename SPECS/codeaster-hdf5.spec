@@ -52,7 +52,7 @@ export CC=gcc
 export CXX=g++
 export F9X=gfortran
 #export LDFLAGS='-L/usr/lib64/ -lopenblas' # temporary for own purpose
-export LDFLAGS='-l%{aster_libs}/OpenBLAS/lib/libopenblas.a'
+export LDFLAGS='-l%{aster_root}/%{aster_libs}/OpenBLAS/lib/libopenblas.a'
 %{_configure} %{configure_opts} --enable-cxx --prefix=%{_prefix}
 make
 
