@@ -64,13 +64,15 @@ ln -sf %{aster_libs}/metis-%{metis_version}/bin/kmetis pmetis
 %{_bindir}/astk
 %{_bindir}/as_run
 %{outils_dir}/xmgrace
-%{outils_dir}/gmsh
+#%{outils_dir}/gmsh
 %{outils_dir}/*metis
 
 %clean
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 8 2017 Stefan Reiterer 1.13.9-1
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer 1.13.9-1
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
