@@ -19,7 +19,7 @@ Source2:        codeaster_profile_local.sh
 BuildRequires: python
 BuildRequires: python-setuptools
 BuildRequires: xterm, nedit
-BuildRequires: gmsh
+#BuildRequires: gmsh
 BuildRequires: codeaster-metis
 BuildRequires: grace
 
@@ -47,7 +47,7 @@ ln -sf %{aster_root}/bin/as_run %{buildroot}/%{_bindir}
 %global outils_dir %{aster_root}/outils
 mkdir -p %{buildroot}/%{outils_dir} 
 cd %{buildroot}/%{outils_dir}
-ln -sf %{_bindir}/gmsh gmsh
+#ln -sf %{_bindir}/gmsh gmsh
 ln -sf %{_bindir}/xmgrace xmgrace
 ln -sf %{_bindir}/xmgrace xmgrace
 ln -sf %{aster_libs}/metis-%{metis_version}/bin/kmetis kmetis
