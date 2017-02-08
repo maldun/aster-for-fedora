@@ -5,7 +5,7 @@
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}/
 
-Name:           codeaster-mumps
+Name:           codeaster-mumps-stable
 Version:        %{version}
 Release:        1%{?dist}
 Summary:	    Graph, mesh and hypergraph partitioning library; specifically for Code_Aster
