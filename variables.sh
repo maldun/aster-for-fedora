@@ -29,3 +29,19 @@ export SPEC_DIR=${BUILD_DIR}/SPECS
 ###################
 
 export HDF=hdf5-1.8.14
+export MED=med-3.2.0
+
+###################
+# functions        #
+###################
+
+function copy_pkg () {
+   cd ${DOWNL}
+   cd aster-full-src-${ASTER_SUB}/SRC
+
+   tar -xvf $1.tar.gz
+   mv $1 codeaster-$1
+   tar cvzf codeaster-$1.tar.gz codeaster-$1
+   cp codeaster-$1.tar.gz ${SOURCE_DIR}
+   cd ${SPEC_DIR}
+}
