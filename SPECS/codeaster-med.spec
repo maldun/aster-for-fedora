@@ -14,7 +14,7 @@ Summary:        med lib specific for Code_Aster
 
 License:        LGPLv3+
 URL:            http://www.code-aster.org/outils/med/
-Source0:        codeaster-med-3.0.8.tar.gz
+Source0:        codeaster-med-3.2.0.tar.gz
 
 
 BuildRequires:  codeaster-hdf5
