@@ -1,7 +1,7 @@
 %global version 3.2.0
 %global hdf5_version 1.8.14
 %global aster_root /cad/app/aster
-%global aster_libs lib
+%global aster_libs public
 %define debug_package %{nil}
 %global hdf5_path %{aster_root}/%{aster_libs}/hdf5-%{hdf5_version}
 %global _prefix %{aster_root}/%{aster_libs}/med-%{version}/

@@ -1,6 +1,6 @@
 %global version 5.1.11
 %global aster_root /cad/app/aster
-%global aster_libs lib
+%global aster_libs public
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 

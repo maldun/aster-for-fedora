@@ -1,6 +1,6 @@
-%global version 11.4
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs /usr/lib64/codeaster/
+%global version 12.7
+%global aster_root /cad/app/aster
+%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global libdir /usr/lib64
 %global mpidir /usr/lib64/openmpi
@@ -56,6 +56,8 @@ ln -sf ASTER_HOMARD/homard ../../outils/homard
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 8 2017 Stefan Reiterer 12.7
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec

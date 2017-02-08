@@ -1,6 +1,6 @@
 %global version 4.10.0
 %global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/lib/
+%global aster_libs %{aster_root}/public/
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}/
