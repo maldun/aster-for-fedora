@@ -1,6 +1,6 @@
-%global version 4.0.3
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs codeaster
+%global version 4.0.3-1
+%global aster_root /cad/app/aster
+%global aster_libs lib
 %define debug_package %{nil}
 
 
@@ -11,7 +11,7 @@ Summary:        Serial Graph Partitioning and Fill-reducing Matrix Ordering; spe
 
 License:        ASL 2.0 and BSD and LGPLv2+
 URL:            http://code-aster.org/
-Source0:        codeaster-metis-4.0.3.tar.gz
+Source0:        codeaster-metis-4.0.3-1.tar.gz
 
 BuildRequires: cmake
 BuildRequires: pcre-devel
@@ -32,13 +32,13 @@ This is the Code_Aster specific package, which provides the optimal metis lib fo
 
 %build
 #Do out of tree builds
-%global _prefix %{_libdir}/%{aster_libs}/metis-%{version}/
+%global _prefix %{aster_root}/%{aster_libs}/metis-%{version}/
 #Serial build
 export CFLAGS='-std=gnu9x -fno-stack-protector -O2 -fPIC'
 export CC=gcc
 export CXX=g++
 export F9X=gfortran
-export LDFLAGS='-L/usr/lib64/ -lopenblas'
+export LDFLAGS='-l%{aster_libs}/OpenBLAS/lib/libopenblas.a'
 make
 
 %install
@@ -57,6 +57,8 @@ make install prefix=%{buildroot}%{_prefix}
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Thu May 12 2016 Stefan Reiterer 1.13.7-1
+* Wed Feb 8 2017 Stefan Reiterer 4.0.3-1
+- Adaption for centos (personal)
+* Thu May 12 2016 Stefan Reiterer 4.0.3
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec

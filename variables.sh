@@ -30,6 +30,7 @@ export SPEC_DIR=${BUILD_DIR}/SPECS
 
 export HDF=hdf5-1.8.14
 export MED=med-3.2.0
+export METIS=metis-4.0.3-1
 
 ###################
 # functions        #
