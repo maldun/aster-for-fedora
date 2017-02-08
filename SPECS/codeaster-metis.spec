@@ -1,4 +1,4 @@
-%global version 4.0.3-1
+%global version 4.0.3
 %global aster_root /cad/app/aster
 %global aster_libs lib
 %define debug_package %{nil}
@@ -11,7 +11,7 @@ Summary:        Serial Graph Partitioning and Fill-reducing Matrix Ordering; spe
 
 License:        ASL 2.0 and BSD and LGPLv2+
 URL:            http://code-aster.org/
-Source0:        codeaster-metis-4.0.3-1.tar.gz
+Source0:        codeaster-metis-4.0.3.tar.gz
 
 BuildRequires: cmake
 BuildRequires: pcre-devel
