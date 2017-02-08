@@ -5,14 +5,14 @@
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}/
 
-Name:           codeaster-mumps-stable
+Name:           codeaster-stable-mumps
 Version:        %{version}
 Release:        1%{?dist}
 Summary:	    Graph, mesh and hypergraph partitioning library; specifically for Code_Aster
 
 License:        CeCILL-C
 URL:            http://mumps.enseeiht.fr/
-Source0:        codeaster-mumps-stable-%{version}.tar.gz
+Source0:        codeaster-stable-mumps-%{version}.tar.gz
 
 BuildRequires:	codeaster-metis codeaster-scotch 
 #BuildRequires:  openblas openblas-static openblas-devel
