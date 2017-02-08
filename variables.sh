@@ -32,6 +32,8 @@ export HDF=hdf5-1.8.14
 export MED=med-3.2.0
 export METIS=metis-4.0.3
 export METIS_SUB=1
+export FRONTEND
+
 
 ###################
 # functions        #
@@ -41,7 +43,7 @@ function copy_pkg () {
    cd ${DOWNL}
    cd aster-full-src-${ASTER_SUB}/SRC
 
-   tar -xvf $1.tar.gz
+   tar -xvf $2.tar.gz
    mv $1 codeaster-$1
    tar cvzf codeaster-$1.tar.gz codeaster-$1
    cp codeaster-$1.tar.gz ${SOURCE_DIR}

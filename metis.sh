@@ -3,15 +3,8 @@
 #########################
 
 source "$(dirname "$0")"/variables.sh
-
-cd ${DOWNL}
-cd aster-full-src-${ASTER_SUB}/SRC
 export METIS_FULL=${METIS}-${METIS_SUB}
 
-tar -xvf ${METIS_FULL}.tar.gz
-mv ${METIS} codeaster-${METIS}
-tar cvzf codeaster-${METIS}.tar.gz codeaster-${METIS}
-cp codeaster-${METIS}.tar.gz ${SOURCE_DIR}
-cd ${SPEC_DIR}
+copy_pkg ${METIS} ${METIS_FULL}
 
 QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-metis.spec
