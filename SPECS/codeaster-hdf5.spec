@@ -1,6 +1,6 @@
 %global version 1.8.14
 %global aster_root /cad/app/aster
-%global aster_libs codeaster
+%global aster_libs lib
 %define debug_package %{nil}
 
 
@@ -30,7 +30,8 @@ This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for cod
 
 %build
 #Do out of tree builds
-%global _prefix %{_libdir}/%{aster_libs}/hdf5-%{version}/
+#%global _prefix %{_libdir}/%{aster_libs}/hdf5-%{version}/
+%global _prefix %{aster_root}/%{aster_libs}/hdf5-%{version}/
 %global _configure ./configure
 #Common configure options
 %global configure_opts \\\
