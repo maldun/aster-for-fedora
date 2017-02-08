@@ -15,7 +15,7 @@ Source0:        codeaster-hdf5-1.8.14.tar.gz
 
 
 BuildRequires: krb5-devel, openssl-devel, zlib-devel, gcc-gfortran, time
-BuildRequires: openblas-openmp
+#BuildRequires: openblas-static
 # For patches/rpath
 BuildRequires: automake
 BuildRequires: libtool
