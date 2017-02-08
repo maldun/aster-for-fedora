@@ -25,7 +25,7 @@ This is the Code_Aster specific package, which provides the optimal scotch lib f
 %prep
 %setup -q
 sed 's|@CFLAGS@|%{_optflags} -fno-stack-protector -fPIC|'< %SOURCE1 > src/Makefile.inc.old
-sed 's|@LDFLAGS@|-l%{aster_root}/%{aster_libs}/OpenBLAS/lib/libopenblas.a|' < src/Makefile.inc.old > src/Makefile.inc
+sed 's|@LDFLAGS@|-L%{aster_root}/%{aster_libs}/OpenBLAS/lib/ -lopenblas|' < src/Makefile.inc.old > src/Makefile.inc
 rm -f src/Makefile.inc.old
 
 %build
