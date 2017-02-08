@@ -1,10 +1,10 @@
-%global version 3.0.8
-%global hdf5_version 1.8.10
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs codeaster
+%global version 3.2.0
+%global hdf5_version 1.8.14
+%global aster_root /cad/app/aster
+%global aster_libs lib
 %define debug_package %{nil}
-%global hdf5_path %{_libdir}/%{aster_libs}/hdf5-%{hdf5_version}
-%global _prefix %{_libdir}/%{aster_libs}/med-%{version}/
+%global hdf5_path %{aster_root}/%{aster_libs}/hdf5-%{hdf5_version}
+%global _prefix %{aster_root}/%{aster_libs}/med-%{version}/
 
 
 Name:           codeaster-med
@@ -75,6 +75,8 @@ rm -rf %{_prefix}/share
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Thu May 12 2016 Stefan Reiterer 1.13.7-1
+* Wed Feb 8 2017 Stefan Reiterer 3.2.0
+- Adaption for centos (personal)
+* Thu May 12 2016 Stefan Reiterer 3.0.8
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
