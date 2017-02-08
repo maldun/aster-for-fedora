@@ -34,7 +34,7 @@ export METIS=metis-4.0.3
 export METIS_SUB=1
 export FRONTEND_VER=1.13.9
 export FRONTEND_SUB=1
-export SCOTCH=5.1.11
+export SCOTCH=scotch-5.1.11
 export SCOTCH_SUB=aster3
 
 
