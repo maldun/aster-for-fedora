@@ -37,7 +37,7 @@ export FRONTEND_SUB=1
 export SCOTCH=scotch-5.1.11
 export SCOTCH_SUB=aster3
 export MUMPS_STABLE=mumps-4.10.0
-export MUMPS_STABLE_SUB=aster3
+export MUMPS_STABLE_SUB=aster3-2
 
 ###################
 # functions        #
