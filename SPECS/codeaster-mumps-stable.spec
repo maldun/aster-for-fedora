@@ -12,7 +12,7 @@ Summary:	    Graph, mesh and hypergraph partitioning library; specifically for C
 
 License:        CeCILL-C
 URL:            http://mumps.enseeiht.fr/
-Source0:        codeaster-mumps-%{version}.tar.gz
+Source0:        codeaster-mumps-stable-%{version}.tar.gz
 
 BuildRequires:	codeaster-metis codeaster-scotch 
 #BuildRequires:  openblas openblas-static openblas-devel
