@@ -46,7 +46,7 @@ def configure(self):
     opts.embed_med  = True
     
     opts.enable_mumps  = True
-    opts.mumps_version = '5.0.1'
+    opts.mumps_version = '4.10.0'
     opts.mumps_libs = 'dmumps zmumps smumps cmumps mumps_common pord metis openblas esmumps scotch scotcherr'
 
     opts.enable_petsc = False
