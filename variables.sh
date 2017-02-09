@@ -40,7 +40,7 @@ export MUMPS_STABLE=mumps-4.10.0
 export MUMPS_STABLE_SUB=aster3-2
 export MFRONT=mfront-2.0.3
 export MFRONT_SUB=1
-export ASTER_STABLE=aster-12.7
+export ASTER_STABLE=12.7
 export ASTER_STABLE_SUB=0
 
 ###################
