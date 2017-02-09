@@ -9,7 +9,7 @@ aster_libdir = '/cad/app/aster/public'
 def configure(self):
     opts = self.options
     self.env.append_value('CFLAGS', ['-std=gnu9x'])
-    self.env.prepend_value('PATH',[aster_libdir + 'mfront-2.0.3/bin/'])
+    self.env.prepend_value('PATH',[aster_libdir + '/mfront-2.0.3/bin/'])
 
     self.env.append_value('LIBPATH', [
         aster_libdir+'/hdf5-1.8.14/lib',
@@ -57,4 +57,4 @@ def configure(self):
     opts.embed_aster    = True
     opts.embed_fermetur = True
 
-    self.options.enable_mfront = False
+    self.options.enable_mfront = True
