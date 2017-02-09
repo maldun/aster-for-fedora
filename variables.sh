@@ -62,7 +62,7 @@ function copy_pkg_type () {
    cd ${DOWNL}
    cd aster-full-src-${ASTER_SUB}/SRC
 
-   tar -xvf $2.tar.gz
+   tar -xvf $2.$4
    mv $1 codeaster-$3-$1
    tar cvzf codeaster-$3-$1.tar.gz codeaster-$3-$1
    cp codeaster-$3-$1.tar.gz ${SOURCE_DIR}
