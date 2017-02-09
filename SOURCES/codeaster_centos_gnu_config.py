@@ -31,7 +31,7 @@ def configure(self):
         aster_libdir+'/mumps-4.10.0/include_seq',
         aster_libdir+'/mumps-4.10.0/include',
         aster_libdir+'/mfront-2.0.3/include',
-        aster_libdir+'/OpenBLAS/include'
+        aster_libdir+'/OpenBLAS/include',
         '/usr/include',
         #'/home/maldun/Salome_Meca/devel/aster_root/public/metis-4.0.3/include/',
         ])
