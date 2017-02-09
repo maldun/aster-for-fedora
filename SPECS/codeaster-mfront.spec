@@ -15,7 +15,7 @@ License:        GPL (GNU General Public License, version 3) and CeCILL-C
 URL:            http://tfel.sourceforge.net/about.html
 Source0:        codeaster-mfront-%{version}.tar.gz
 
-BuildRequires:	cmake python boost-python
+BuildRequires:	cmake python boost boost-devel boost-python
 
 %description
 MFront is a code generator which translates a set of
