@@ -57,4 +57,4 @@ def configure(self):
     opts.embed_aster    = True
     opts.embed_fermetur = True
 
-    self.options.enable_mfront = True
+    self.options.enable_mfront = False
