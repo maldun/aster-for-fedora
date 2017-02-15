@@ -3,6 +3,8 @@
 #########################
 
 source "$(dirname "$0")"/variables.sh
+cd ${DOWNL}
+mv scalapack_installer.tgz aster-full-src-${ASTER_SUB}/SRC
 
 copy_pkg_type scalapack scalapack_installer openmpi-${SCALAPACK} tgz
 
