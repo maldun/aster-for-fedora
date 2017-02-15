@@ -4,8 +4,10 @@
 
 source "$(dirname "$0")"/variables.sh
 cd ${DOWNL}
+mkdir codeaster-scalapack-openmpi-${SCALAPACK}
 tar -xvf scalapack_installer.tgz
-tar cvzf codeaster-scalapack-openmpi-${SCALAPACK}.tar.gz scalapack_installer
+mv scalapack_installer-${SCALAPACK_INSTALLER}
+tar cvzf codeaster-scalapack-openmpi-${SCALAPACK}.tar.gz scalapack_installer-${SCALAPACK_INSTALLER}
 cp codeaster-scalapack-openmpi-${SCALAPACK}.tar.gz ${SOURCE_DIR}
 cd ${SPEC_DIR}
 
