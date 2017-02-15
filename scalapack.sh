@@ -1,5 +1,5 @@
 #########################
-# SCOTCH
+# SCALAPACK
 #########################
 
 source "$(dirname "$0")"/variables.sh
