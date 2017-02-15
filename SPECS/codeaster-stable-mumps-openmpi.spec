@@ -11,14 +11,14 @@
 %global mpidir %{libdir}/openmpi
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
-Name:           codeaster-mumps-openmpi
+Name:           codeaster-stable-mumps-openmpi
 Version:        %{version}
 Release:        1%{?dist}
 Summary:	    Graph, mesh and hypergraph partitioning library; specifically for Code_Aster
 
 License:        CeCILL-C
 URL:            http://mumps.enseeiht.fr/
-Source0:        codeaster-mumps-openmpi-%{version}.tar.gz
+Source0:        codeaster-stable-mumps-openmpi-%{version}.tar.gz
 Source1:        wscript-mumps-openmpi
 
 BuildRequires:	codeaster-metis codeaster-scotch codeaster-scalapack-openmpi
