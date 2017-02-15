@@ -18,7 +18,7 @@ Source0:        codeaster-scalapack-openmpi-%{version}.tar.gz
 
 #BuildRequires: lapack-devel, blas-devel, openblas
 BuildRequires: gcc-gfortran, glibc-devel
-BuildRequires: mpich-devel-static
+#BuildRequires: mpich-devel-static
 #BuildRequires: openmpi-devel
 
 %description
