@@ -1,9 +1,9 @@
 %global version 2.0.2
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs /usr/lib64/codeaster/
+%global aster_root /cad/app/aster
+%global aster_libs ${aster_root}/public
 %define debug_package %{nil}
 %global libdir /usr/lib64
-%global mpidir /usr/lib64/openmpi
+%global mpidir /cad/app/openmpi/openmpi-1.10.5
 %global _prefix %{aster_libs}/scalapack-openmpi-%{version}/
 
 Name:           codeaster-scalapack-openmpi
@@ -16,10 +16,10 @@ URL:            http://www.netlib.org/scalapack/
 Source0:        codeaster-scalapack-openmpi-%{version}.tar.gz
 
 
-BuildRequires: lapack-devel, blas-devel, openblas
+#BuildRequires: lapack-devel, blas-devel, openblas
 BuildRequires: gcc-gfortran, glibc-devel
 BuildRequires: mpich-devel-static
-BuildRequires: openmpi-devel
+#BuildRequires: openmpi-devel
 
 %description
 %description
