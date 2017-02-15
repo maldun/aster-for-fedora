@@ -14,4 +14,7 @@ tar cvzf codeaster-stable-${ASTER_STABLE_FULL}.tar.gz codeaster-stable-${ASTER_S
 cp codeaster-stable-${ASTER_STABLE_FULL}.tar.gz ${SOURCE_DIR}
 cd ${SPEC_DIR}
 
+export LD_LIBRARY_PATH=/cad/app/aster/public/mfront-2.0.3/lib:$LD_LIBRARY_PATH
+export PATH=/cad/app/aster/public/mfront-2.0.3/bin:$PATH
+
 QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-stable.spec

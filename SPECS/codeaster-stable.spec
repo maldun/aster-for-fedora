@@ -18,7 +18,7 @@ URL:            http://www.code-aster.org
 Source0:        codeaster-stable-%{version}.tar.gz
 Source1:        %{config_file}.py
 
-BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel codeaster-frontend codeaster-mfront
+BuildRequires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront
 #BuildRequires:  openblas openblas-static openblas-devel
 
 %description

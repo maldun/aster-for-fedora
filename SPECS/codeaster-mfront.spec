@@ -32,6 +32,10 @@ make
 %install
 make install
 
+# create symlink for aster
+cd %{buildroot}%{_prefix}/bin
+ln -s mfront mfront-%{version}
+
 %post
 
 %preun

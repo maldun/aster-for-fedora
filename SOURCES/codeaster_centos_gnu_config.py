@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 """
-Fichier de configuration WAF pour version séquentielle sur Fedora 23:
+Fichier de configuration WAF pour version séquentielle sur Centos 7:
 - Compilateur : GNU
 - BLAS        : OpenBLAS
 """
@@ -57,4 +57,4 @@ def configure(self):
     opts.embed_aster    = True
     opts.embed_fermetur = True
 
-    self.options.enable_mfront = False
+    self.options.enable_mfront = True
