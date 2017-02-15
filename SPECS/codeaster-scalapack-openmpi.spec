@@ -1,6 +1,6 @@
 %global version 2.0.2
 %global aster_root /cad/app/aster
-%global aster_libs ${aster_root}/public
+%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global libdir /usr/lib64
 %global mpidir /cad/app/openmpi/openmpi-1.10.5
