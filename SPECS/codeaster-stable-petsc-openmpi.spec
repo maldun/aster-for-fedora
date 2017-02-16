@@ -10,19 +10,20 @@
 %global includedir /usr/include
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
-Name:           codeaster-petsc-openmpi
+Name:           codeaster-stable-petsc-openmpi
 Version:        %{version}
 Release:        1%{?dist}
 Summary:        Portable Extensible Toolkit for Scientific Computation
 
 License:        MIT
 URL:            http://www.mcs.anl.gov/petsc/
-Source0:        codeaster-petsc-openmpi-%{version}.tar.gz
+Source0:        codeaster-stable-petsc-openmpi-%{version}.tar.gz
 
-BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel openmpi openmpi-devel codeaster-scalapack-openmpi codeaster-hdf5
+BuildRequires:	codeaster-metis codeaster-scotch  codeaster-scalapack-openmpi codeaster-hdf5
 BuildRequires:  gcc-c++ gcc-gfortran
-BuildRequires:  openblas-devel openssl-devel zlib-devel
-BuildRequires:  hypre-openmpi-devel hypre-devel SuperLU-devel
+#BuildRequires:  openblas openblas-static openblas-devel openmpi openmpi-devel openblas-devel
+BuildRequires:  openssl-devel zlib-devel
+#BuildRequires:  hypre-openmpi-devel hypre-devel SuperLU-devel
 
 %description
 PETSc is the "Portable Extensible Toolkit for Scientific Computation",\

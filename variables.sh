@@ -45,6 +45,7 @@ export ASTER_STABLE=12.7
 export ASTER_STABLE_SUB=0
 export SCALAPACK=2.0.2
 export SCALAPACK_INSTALLER=1.0.2
+export PETSC_STABLE_VER=3.4.5
 
 ###################
 # functions        #
