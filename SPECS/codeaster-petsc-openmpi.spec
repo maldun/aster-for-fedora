@@ -1,13 +1,13 @@
 %global version 3.4.5
 %global scalapack_version 2.0.2
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs /usr/lib64/codeaster/
+%global aster_root /cad/app/aster
+%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/petsc-%{version}/
-%global libdir /usr/lib64
+%global openblasdir %{aster_libs}/OpenBLAS/lib
+%global mpidir /cad/app/openmpi/1.10.5
 %global includedir /usr/include
-%global mpidir %{libdir}/openmpi
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
 Name:           codeaster-petsc-openmpi
@@ -38,7 +38,7 @@ This is the Code_Aster specific package, which provides the correct PETSc lib fo
 %setup -q
 
 %build
-PETSC_ARCH=arch-linux2-c-opt ./config/configure.py --with-mpi-dir=%{mpidir} --with-blas-lapack-lib=%{libdir}/libopenblas.a  --download-hypre=no --download-ml=no --with-debugging=0 COPTFLAGS=-O2 CXXOPTFLAGS=-O2 FOPTFLAGS=-O2 --configModules=PETSc.Configure --optionsModule=PETSc.compilerOptions  --with-x=0   --with-scalapack=1 --with-scalapack-dir=%{scalapackdir} --with-shared-libraries=0 --prefix=%{_prefix}
+PETSC_ARCH=arch-linux2-c-opt ./config/configure.py --with-mpi-dir=%{mpidir} --with-blas-lapack-lib=%{openblasdir}/libopenblas.a  --download-hypre=yes --download-ml=yes --with-debugging=0 COPTFLAGS=-O2 CXXOPTFLAGS=-O2 FOPTFLAGS=-O2 --configModules=PETSc.Configure --optionsModule=PETSc.compilerOptions  --with-x=0   --with-scalapack=1 --with-scalapack-dir=%{scalapackdir} --with-shared-libraries=0 --prefix=%{_prefix}
 
 make V=1
 
