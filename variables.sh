@@ -36,7 +36,8 @@ export FRONTEND_VER=1.13.9
 export FRONTEND_SUB=1
 export SCOTCH=scotch-5.1.11
 export SCOTCH_SUB=aster3
-export MUMPS_STABLE=mumps-4.10.0
+export MUMPS_STABLE_VER=4.10.0
+export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
 export MUMPS_STABLE_SUB=aster3-2
 export MFRONT=mfront-2.0.3
 export MFRONT_SUB=1
@@ -70,3 +71,15 @@ function copy_pkg_type () {
    cp codeaster-$3-$1.tar.gz ${SOURCE_DIR}
    cd ${SPEC_DIR}
 }
+
+function copy_pkg_type_mpi () {
+   cd ${DOWNL}
+   cd aster-full-src-${ASTER_SUB}/SRC
+
+   tar -xvf $2.$4
+   mv $1 codeaster-$3
+   tar cvzf codeaster-$3.tar.gz codeaster-$3
+   cp codeaster-$3.tar.gz ${SOURCE_DIR}
+   cd ${SPEC_DIR}
+}
+

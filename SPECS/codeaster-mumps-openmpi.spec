@@ -1,12 +1,12 @@
-%global version 5.0.1
+%global version 4.10.0
 %global scalapack_version 2.0.2
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs /usr/lib64/codeaster/
+%global aster_root /cad/app/aster
+%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}-openmpi/
 %global libdir /usr/lib64
-%global mpidir %{libdir}/openmpi
+%global mpidir /cad/app/openmpi/10.0.5
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
 Name:           codeaster-mumps-openmpi
@@ -16,7 +16,7 @@ Summary:	    Graph, mesh and hypergraph partitioning library; specifically for C
 
 License:        CeCILL-C
 URL:            http://mumps.enseeiht.fr/
-Source0:        codeaster-mumps-openmpi-%{version}.tar.gz
+Source0:        codeaster-mumps-%{version}-openmpi.tar.gz
 Source1:        wscript-mumps-openmpi
 
 BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel openmpi openmpi-devel codeaster-scalapack-openmpi

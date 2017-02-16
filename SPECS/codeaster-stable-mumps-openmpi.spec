@@ -1,14 +1,15 @@
 %global version 4.10.0
 %global scalapack_version 2.0.2
 %global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public
+%global aster_libs %{aster_root}/public/
+%global openblas_lib %{aster_libs}/OpenBLAS/lib
 %global metis_ver 4.0.3
 %global scotch_ver 5.1.11
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}-openmpi/
 %global libdir /usr/lib64
-%global mpidir %{libdir}/openmpi
+%global mpidir /cad/app/openmpi/1.10.5
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
 Name:           codeaster-stable-mumps-openmpi
@@ -31,12 +32,12 @@ This is the Code_Aster specific package, which provides the optimal mumps lib fo
 
 %prep
 %setup -q
-LIBPATH="%{scalapackdir}/lib %{mpidir}/lib %{aster_libs}scotch-%{scotch_ver}/lib  %{aster_libs}metis-%{metis_ver}/lib/ %{libdir}" INCLUDES="%{scalapackdir}/include %{aster_libs}scotch-%{scotch_ver}/include/ %{aster_libs}metis-%{metis_ver}/include %{mpidir}/include/" ./waf configure --enable-mpi --maths-libs="openblas scalapack" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
+LIBPATH="%{openblas_lib} %{scalapackdir}/lib %{mpidir}/lib %{aster_libs}scotch-%{scotch_ver}/lib  %{aster_libs}metis-%{metis_ver}/lib/ %{libdir}" INCLUDES="%{scalapackdir}/include %{aster_libs}scotch-%{scotch_ver}/include/ %{aster_libs}metis-%{metis_ver}/include %{mpidir}/include/" ./waf configure --enable-mpi --maths-libs="openblas scalapack" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
 # patch for build
 cp %SOURCE1 wscript
 ./waf build
 mv Makefile.inc Makefile.inc.old
-sed 's|LIBPAR =|SCALAP = %{scalapackdir}/lib/libscalapack.a %{libdir}/libopenblas.a\nLIBPAR = $(SCALAP)  -L%{mpidir}/lib/ -lmpi #-lmpi_f77|' < Makefile.inc.old > Makefile.inc
+sed 's|LIBPAR =|SCALAP = %{scalapackdir}/lib/libscalapack.a %{openblas_lib}/libopenblas.a\nLIBPAR = $(SCALAP)  -L%{mpidir}/lib/ -lmpi #-lmpi_f77|' < Makefile.inc.old > Makefile.inc
 
 %build
 make all
@@ -63,6 +64,8 @@ cp libseq/mpif.h %{buildroot}%{_prefix}include_seq/
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 16 2017 Stefan Reiterer 4.10.0-aster3
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
