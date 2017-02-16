@@ -2,8 +2,8 @@
 %global aster_root /cad/app/aster
 %global aster_libs %{aster_root}/public
 %define debug_package %{nil}
-%global libdir /usr/lib64
-%global mpidir /cad/app/openmpi/openmpi-1.10.5
+%global openblasdir %{aster_libs}/OpenBLAS/lib
+%global mpidir /cad/app/openmpi/1.10.5
 %global _prefix %{aster_libs}/scalapack-openmpi-%{version}/
 
 Name:           codeaster-scalapack-openmpi
@@ -59,7 +59,7 @@ The repackaging was necessary to be compatible with the codeaster-mumps-openmpi 
 %install
 cd scalapack_installer_1.0.2
 mkdir -p %{buildroot}%{_prefix}
-./setup.py --lapacklib=%{libdir}/libopenblas.a --mpicc=%{mpidir}/bin/mpicc --mpif90=%{mpidir}/bin/mpif90 --mpiincdir=%{mpidir}/include --ldflags_c=-fopenmp --ldflags_fc=-fopenmp --notesting --prefix=%{buildroot}%{_prefix}
+./setup.py --lapacklib=%{openblasdir}/libopenblas.a --mpicc=%{mpidir}/bin/mpicc --mpif90=%{mpidir}/bin/mpif90 --mpiincdir=%{mpidir}/include --ldflags_c=-fopenmp --ldflags_fc=-fopenmp --notesting --prefix=%{buildroot}%{_prefix}
 
 %post
 
