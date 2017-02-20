@@ -21,7 +21,8 @@ Source1:        %{config_file}.py
 
 AutoReqProv: no
 
-BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel codeaster-frontend codeaster-mfront openmpi openmpi-devel codeaster-petsc-openmpi
+BuildRequires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront codeaster-petsc-openmpi
+#BuildRequires:  openblas openblas-static openblas-devel openmpi openmpi-devel
 
 %description
 Code_Aster offers a full range of multiphysical analysisand modelling methods that go well beyond the standard
