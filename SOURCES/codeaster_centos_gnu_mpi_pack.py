@@ -1,9 +1,9 @@
 # encoding: utf-8
 
 """
-Fichier de configuration WAF pour version parallèle sur Fedora 23:
+Fichier de configuration WAF pour version parallèle sur Centos 7:
 - Compilateur : GNU
-- MPI         : système (OpenMPI, Fedora 23)
+- MPI         : système (OpenMPI, Centos 7)
 - BLAS        : OpenBLAS
 - Scalapack   : Self built V 3.2.0
 - PETSc       : 

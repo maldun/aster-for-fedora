@@ -9,14 +9,14 @@
 %global config_file codeaster_centos_gnu_mpi_pack
 %global mpidir /usr/lib64/openmpi
 
-Name:           codeaster-testing-openmpi
+Name:           codeaster-stable-openmpi
 Version:        %{version}
 Release:        1%{?dist}
 Summary:	    Code_Aster finite element method solver. Testing version. With OpenMPI support.
 
 License:        GPL2
 URL:            http://www.code-aster.org
-Source0:        codeaster-testing-openmpi-%{version}.tar.gz
+Source0:        codeaster-stable-openmpi-%{version}.tar.gz
 Source1:        %{config_file}.py
 
 AutoReqProv: no
