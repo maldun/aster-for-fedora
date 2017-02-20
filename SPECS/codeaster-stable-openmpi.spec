@@ -7,7 +7,7 @@
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}mpi
 %global config_file codeaster_centos_gnu_mpi_pack
-%global mpidir /cad/app/openmpi/1.10.5
+%global mpidir /cad/app/openmpi/1.10.5/
 
 Name:           codeaster-stable-openmpi
 Version:        %{version}
