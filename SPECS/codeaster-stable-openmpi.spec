@@ -1,12 +1,12 @@
-%global major_version 13.1
+%global major_version 12.7
 %global version %{major_version}.0
 %global mfront_version 2.0.3
 
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs /usr/lib64/codeaster/
+%global aster_root /cad/app/aster
+%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}mpi
-%global config_file codeaster_fedora_gnu_mpi_pack
+%global config_file codeaster_centos_gnu_mpi_pack
 %global mpidir /usr/lib64/openmpi
 
 Name:           codeaster-testing-openmpi

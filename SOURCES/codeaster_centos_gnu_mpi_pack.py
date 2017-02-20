@@ -12,8 +12,8 @@ Fichier de configuration WAF pour version parallèle sur Fedora 23:
 import os.path as osp
 import sys
 
-aster_root='/cad/app/aster'
-aster_libdir = aster_root + 'public'
+aster_root='/cad/app/aster/'
+aster_libdir = aster_root + 'public/'
 mpi_dir = '/cad/app/openmpi/1.10.5/'
 #extlibs_intel = osp.expanduser("~/Salome_Meca/Code_Aster/Intel/extlibs/")
 
@@ -42,36 +42,30 @@ def configure(self):
     self.options.enable_mfront = True
     self.env.prepend_value('LIBPATH', [
         #'/usr/lib64/python3.4/',
-        mpi_dir+'lib',
-        aster_libdir + 'mumps-5.0.1-openmpi/lib',
-        aster_libdir + 'scalapack-openmpi-2.0.2/lib',
-        aster_libdir + 'scotch-5.1.11_esmumps/lib/',
-        #extlibs + 'ParMetis-3.2.0',
-        aster_libdir + 'petsc-3.4.5/lib',
-        aster_libdir + 'hdf5-1.8.10/lib',
-        #public + 'zlib-1.2.8',
-        aster_libdir + 'med-3.0.8/lib64',
-        #'/usr/lib64/',
-        aster_libdir + 'mfront-2.0.3/lib',
-        aster_libdir + 'metis-4.0.3/lib',
+        mpi_dir+'lib',        
+        aster_libdir+'/hdf5-1.8.14/lib',
+        aster_libdir+'/med-3.2.0/lib64',
+        aster_libdir+'/metis-4.0.3/lib',
+        aster_libdir+'/scotch-5.1.11/lib',
+        aster_libdir+'/mumps-4.10.0-openmpi/lib',
+        aster_libdir+'/mfront-2.0.3/lib',
+        aster_libdir+'/OpenBLAS/lib',
+        '/usr/lib64',
         #'/opt/Parmetis/parmetis-4.0.3/build/Linux-x86_64/libmetis/',
         ])
 
     self.env.prepend_value('INCLUDES', [
         mpi_dir+'include',
-        '/usr/lib64/openmpi/include/hypre/',
-        aster_libdir + 'mumps-5.0.1-openmpi/include',
-        #extlibs + 'ParMetis-3.2.0',
-        #extlibs + 'ParMetis-3.2.0/METISLib',
-        #aster_libdir + 'petsc-3.4.5/arch-linux2-c-opt/include',
+        aster_libdir +'/mumps-4.10.0-openmpi/include',
+        aster_libdir+'/hdf5-1.8.14/include',
+        aster_libdir+'/med-3.2.0/include',
+        aster_libdir+'/metis-4.0.3/include',
+        aster_libdir+'/scotch-5.1.11/include',
+        aster_libdir+'/mfront-2.0.3/include',
+        aster_libdir+'/OpenBLAS/include',
+        '/usr/include',
         aster_libdir + 'petsc-3.4.5/include',
         aster_libdir + 'scalapack-openmpi-2.0.2/include',
-        aster_libdir + 'scotch-5.1.11_esmumps/include/',
-        aster_libdir + 'hdf5-1.8.10/include',
-        aster_libdir + 'med-3.0.8/include',
-        aster_libdir + 'metis-4.0.3/include',
-        #'/opt/Parmetis/parmetis-4.0.3/build/Linux-x86_64/metis/include/',
-        aster_libdir + 'mfront-2.0.3/include',
         ])
     
     self.env.append_value('LIB', ('X11',))
@@ -88,7 +82,7 @@ def configure(self):
     opts.parallel = True
 
     opts.enable_mumps  = True
-    opts.mumps_version = '5.0.1'
+    opts.mumps_version = '4.10.0'
     #opts.mumps_libs    = 'dmumps zmumps smumps cmumps mumps_common pord metis scalapack'
     #opts.mumps_libs    = 'dmumps zmumps smumps cmumps mumps_common pord parmetis metis openblas'
     #opts.scotch_libs   = 'ptesmumps ptscotch ptscotcherr'
