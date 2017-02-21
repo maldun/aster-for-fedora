@@ -39,7 +39,7 @@ def configure(self):
 
     
     self.env.prepend_value('PATH',[aster_libdir + 'mfront-2.0.3/bin/'])
-    self.options.enable_mfront = True
+    
     self.env.prepend_value('LIBPATH', [
         #'/usr/lib64/python3.4/',
         mpi_dir+'lib',        
@@ -63,7 +63,7 @@ def configure(self):
         aster_libdir+'/med-3.2.0/include',
         aster_libdir+'/metis-4.0.3/include',
         aster_libdir+'/scotch-5.1.11/include',
-        aster_libdir+'/mfront-2.0.3/include',
+        '/cad/app/aster/public/mfront-2.0.3/include',
         aster_libdir+'/OpenBLAS/include',
         '/usr/include',
         aster_libdir + 'petsc-3.4.5/include',
@@ -94,5 +94,4 @@ def configure(self):
     opts.petsc_libs='petsc'
     opts.embed_petsc = True
 
-    # currently mfront makes trouble
-    opts.enable_mfront = True
+    self.options.enable_mfront = True
