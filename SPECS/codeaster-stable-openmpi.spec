@@ -21,7 +21,7 @@ Source1:        %{config_file}.py
 
 AutoReqProv: no
 
-BuildRequires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront codeaster-stable-petsc-openmpi
+BuildRequires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront codeaster-stable-petsc-openmpi libX11-devel
 #BuildRequires:  openblas openblas-static openblas-devel openmpi openmpi-devel
 
 %description

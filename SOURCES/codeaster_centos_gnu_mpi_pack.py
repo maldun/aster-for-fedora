@@ -51,6 +51,8 @@ def configure(self):
         aster_libdir+'/mfront-2.0.3/lib',
         aster_libdir+'/OpenBLAS/lib',
         '/usr/lib64',
+        aster_libdir + 'petsc-3.4.5/lib',
+        aster_libdir + 'scalapack-openmpi-2.0.2/lib',
         #'/opt/Parmetis/parmetis-4.0.3/build/Linux-x86_64/libmetis/',
         ])
 
