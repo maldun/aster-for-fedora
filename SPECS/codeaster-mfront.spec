@@ -24,13 +24,13 @@ TFEL library
 
 %prep
 %setup -q
-cmake -DCMAKE_BUILD_TYPE=Release -Dlocal-castem-header=ON -Denable-fortran=ON -Ddisable-reference-doc=ON -Ddisable-website=ON -Denable-aster=ON -Denable-python=ON -Denable-python-bindings=ON -Denable-portable-build=ON -DCMAKE_INSTALL_PREFIX=%{buildroot}%{_prefix}
+cmake -DCMAKE_BUILD_TYPE=Release -Dlocal-castem-header=ON -Denable-fortran=ON -Ddisable-reference-doc=ON -Ddisable-website=ON -Denable-aster=ON -Denable-python=ON -Denable-python-bindings=ON -Denable-portable-build=ON -DCMAKE_INSTALL_PREFIX=%{_prefix}
 
 %build
 make
 
 %install
-make install
+make DESTDIR=%{buildroot} install
 
 # create symlink for aster
 cd %{buildroot}%{_prefix}/bin
