@@ -39,7 +39,7 @@ This is the Code_Aster specific package, which provides the correct PETSc lib fo
 %setup -q
 
 %build
-PETSC_ARCH=arch-linux2-c-opt ./config/configure.py --with-mpi-dir=%{mpidir} --with-blas-lapack-lib=%{openblasdir}/libopenblas.a  --download-hypre=yes --download-ml=yes --with-debugging=0 COPTFLAGS=-O2 CXXOPTFLAGS=-O2 FOPTFLAGS=-O2 --configModules=PETSc.Configure --optionsModule=PETSc.compilerOptions  --with-x=0   --with-scalapack=1 --with-scalapack-dir=%{scalapackdir} --with-shared-libraries=0 --prefix=%{_prefix}
+PETSC_ARCH=arch-linux2-c-opt ./config/configure.py --with-mpi-dir=%{mpidir} --with-blas-lapack-lib=%{openblasdir}/libopenblas.a  --download-hypre=no --download-ml=no --with-debugging=0 COPTFLAGS=-O2 CXXOPTFLAGS=-O2 FOPTFLAGS=-O2 --configModules=PETSc.Configure --optionsModule=PETSc.compilerOptions  --with-x=0   --with-scalapack=1 --with-scalapack-dir=%{scalapackdir} --with-shared-libraries=0 --prefix=%{_prefix}
 
 make V=1
 
