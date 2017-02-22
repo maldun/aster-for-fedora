@@ -58,7 +58,7 @@ def configure(self):
 
     self.env.prepend_value('INCLUDES', [
         mpi_dir+'include',
-        aster_libdir +'/mumps-4.10.0-openmpi/include',
+        #aster_libdir +'/mumps-4.10.0-openmpi/include',
         aster_libdir+'/hdf5-1.8.14/include',
         aster_libdir+'/med-3.2.0/include',
         aster_libdir+'/metis-4.0.3/include',
