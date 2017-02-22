@@ -33,13 +33,13 @@ This is the testing version.
 %prep
 %setup -q
 cp %SOURCE1 wafcfg/
-export PATH=%{aster_libs}/mfront-%{mfront_version}/bin:$PATH; export LD_LIBRARY_PATH=%{aster_libs}/mfront-%{mfront_version}/lib:$LD_LIBRARY_PATH; ./waf configure --use-config-dir=wafcfg --use-config=%{config_file} --destdir=%{buildroot} --prefix=%{_prefix}
+export PATH=%{aster_libs}/mfront-%{mfront_version}/bin:$PATH; export LD_LIBRARY_PATH=%{aster_libs}/mfront-%{mfront_version}/lib:$LD_LIBRARY_PATH; ./waf configure --use-config-dir=wafcfg --use-config=%{config_file} --prefix=%{_prefix}
 
 %build
 
 %install
 rm -rf %{buildroot}
-./waf install -p
+./waf install --destdir=%{buildroot} -p
 %post
 echo "vers : %{major_version}:%{aster_root}/%{major_version}/share/aster" >> %{aster_root}/etc/codeaster/aster
 
