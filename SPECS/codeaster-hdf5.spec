@@ -1,6 +1,4 @@
 %global version 1.8.14
-#%global aster_root /cad/app/aster
-#%global aster_libs public
 %define debug_package %{nil}
 
 
