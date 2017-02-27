@@ -1,6 +1,4 @@
-%global version 1.8.14
 %define debug_package %{nil}
-
 
 Name:           codeaster-hdf5
 Version:        %{version}
@@ -9,7 +7,7 @@ Summary:        hdf5 lib specific for Code_Aster
 
 License:        BSD
 URL:            http://code-aster.org/
-Source0:        codeaster-hdf5-1.8.14.tar.gz
+Source0:        codeaster-hdf5-%{version}.tar.gz
 
 
 BuildRequires: krb5-devel, openssl-devel, zlib-devel, gcc-gfortran, time
