@@ -1,8 +1,4 @@
-%global version 4.0.3
-%global aster_root /cad/app/aster
-%global aster_libs public
 %define debug_package %{nil}
-
 
 Name:           codeaster-metis
 Version:        %{version}
@@ -11,7 +7,7 @@ Summary:        Serial Graph Partitioning and Fill-reducing Matrix Ordering; spe
 
 License:        ASL 2.0 and BSD and LGPLv2+
 URL:            http://code-aster.org/
-Source0:        codeaster-metis-4.0.3.tar.gz
+Source0:        codeaster-metis-%{version}.tar.gz
 
 BuildRequires: cmake
 BuildRequires: pcre-devel
@@ -32,13 +28,13 @@ This is the Code_Aster specific package, which provides the optimal metis lib fo
 
 %build
 #Do out of tree builds
-%global _prefix %{aster_root}/%{aster_libs}/metis-%{version}/
+%global _prefix %{aster_libs}/metis-%{version}/
 #Serial build
 export CFLAGS='-std=gnu9x -fno-stack-protector -O2 -fPIC'
 export CC=gcc
 export CXX=g++
 export F9X=gfortran
-export LDFLAGS='-l%{aster_libs}/OpenBLAS/lib/libopenblas.a'
+export LDFLAGS='-l%{openblas_dir}/lib/libopenblas.a'
 make
 
 %install

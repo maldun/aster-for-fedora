@@ -20,7 +20,7 @@ BuildRequires:  python2-devel
 BuildRequires:  zlib-devel
 
 %description
-This is the Code_Aster Frontend package, which provides the optimal med library for Code_Aster
+This is the Code_Aster med package, which provides the optimal med library for Code_Aster
 
 %prep
 %setup -q

@@ -27,29 +27,37 @@ export SOURCE_DIR=${BUILD_DIR}/SOURCES
 export SPEC_DIR=${BUILD_DIR}/SPECS
 
 ###################
-# Packages        #
+# Versions        #
 ###################
 
 export HDF_VER=1.8.14
-export HDF=hdf5-${HDF_VER}
 export MED_VER=3.2.0
-export MED=med-${MED_VER}
-export METIS=metis-4.0.3
+export METIS_VER=4.0.3
 export METIS_SUB=1
 export FRONTEND_VER=1.13.9
 export FRONTEND_SUB=1
-export SCOTCH=scotch-5.1.11
+export SCOTCH_VER=5.1.11
 export SCOTCH_SUB=aster3
 export MUMPS_STABLE_VER=4.10.0
-export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
 export MUMPS_STABLE_SUB=aster3-2
-export MFRONT=mfront-2.0.3
+export MFRONT_VER=2.0.3
 export MFRONT_SUB=1
 export ASTER_STABLE=12.7
 export ASTER_STABLE_SUB=0
 export SCALAPACK=2.0.2
 export SCALAPACK_INSTALLER=1.0.2
 export PETSC_STABLE_VER=3.4.5
+
+###################
+# Packages        #
+###################
+
+export HDF=hdf5-${HDF_VER}
+export MED=med-${MED_VER}
+export METIS=metis-${METIS_VER}
+export SCOTCH=scotch-${SCOTCH_VER}
+export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
+export MFRONT=mfront-${MFRONT_VER}
 
 ###################
 # functions        #
