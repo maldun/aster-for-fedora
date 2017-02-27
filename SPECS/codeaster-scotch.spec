@@ -1,6 +1,3 @@
-%global version 5.1.11
-%global aster_root /cad/app/aster
-%global aster_libs public
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 
@@ -11,7 +8,7 @@ Summary:	    Graph, mesh and hypergraph partitioning library; specifically for C
 
 License:        CeCILL-C
 URL:            http://www.labri.fr/perso/pelegrin/scotch/
-Source0:        codeaster-scotch-5.1.11.tar.gz
+Source0:        codeaster-scotch-%{version}.tar.gz
 Source1:        scotch-Makefile.inc.in
 
 BuildRequires:	flex bison mpich-devel zlib-devel bzip2-devel openblas lzma-devel
@@ -25,12 +22,12 @@ This is the Code_Aster specific package, which provides the optimal scotch lib f
 %prep
 %setup -q
 sed 's|@CFLAGS@|%{_optflags} -fno-stack-protector -fPIC|'< %SOURCE1 > src/Makefile.inc.old
-sed 's|@LDFLAGS@|-L%{aster_root}/%{aster_libs}/OpenBLAS/lib/ -lopenblas|' < src/Makefile.inc.old > src/Makefile.inc
+sed 's|@LDFLAGS@|-L%{openblas_dir}/lib/ -lopenblas|' < src/Makefile.inc.old > src/Makefile.inc
 rm -f src/Makefile.inc.old
 
 %build
 #Do out of tree builds
-%global _prefix %{aster_root}/%{aster_libs}/scotch-%{version}/
+%global _prefix %{aster_libs}/scotch-%{version}/
 #Serial build
 cd src/
 make %{?_smp_mflags}
