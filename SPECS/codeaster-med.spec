@@ -1,10 +1,6 @@
-%global version 3.2.0
-%global hdf5_version 1.8.14
-%global aster_root /cad/app/aster
-%global aster_libs public
 %define debug_package %{nil}
-%global hdf5_path %{aster_root}/%{aster_libs}/hdf5-%{hdf5_version}
-%global _prefix %{aster_root}/%{aster_libs}/med-%{version}/
+%global hdf5_path %{aster_libs}/hdf5-%{hdf5_version}
+%global _prefix %{aster_libs}/med-%{version}/
 
 
 Name:           codeaster-med
@@ -14,7 +10,7 @@ Summary:        med lib specific for Code_Aster
 
 License:        LGPLv3+
 URL:            http://www.code-aster.org/outils/med/
-Source0:        codeaster-med-3.2.0.tar.gz
+Source0:        codeaster-med-%{version}.tar.gz
 
 
 BuildRequires:  codeaster-hdf5

@@ -32,7 +32,8 @@ export SPEC_DIR=${BUILD_DIR}/SPECS
 
 export HDF_VER=1.8.14
 export HDF=hdf5-${HDF_VER}
-export MED=med-3.2.0
+export MED_VER=3.2.0
+export MED=med-${MED_VER}
 export METIS=metis-4.0.3
 export METIS_SUB=1
 export FRONTEND_VER=1.13.9
