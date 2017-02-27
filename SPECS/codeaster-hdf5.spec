@@ -1,6 +1,6 @@
 %global version 1.8.14
-%global aster_root /cad/app/aster
-%global aster_libs public
+#%global aster_root /cad/app/aster
+#%global aster_libs public
 %define debug_package %{nil}
 
 
@@ -31,7 +31,7 @@ This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for cod
 %build
 #Do out of tree builds
 #%global _prefix %{_libdir}/%{aster_libs}/hdf5-%{version}/
-%global _prefix %{aster_root}/%{aster_libs}/hdf5-%{version}/
+%global _prefix %{aster_libs}/hdf5-%{version}/
 %global _configure ./configure
 #Common configure options
 %global configure_opts \\\
@@ -52,7 +52,7 @@ export CC=gcc
 export CXX=g++
 export F9X=gfortran
 #export LDFLAGS='-L/usr/lib64/ -lopenblas' # temporary for own purpose
-export LDFLAGS='-L%{aster_root}/%{aster_libs}/OpenBLAS/lib/ -lopenblas'
+export LDFLAGS='-L%{openblas_dir}/lib/ -lopenblas'
 %{_configure} %{configure_opts} --enable-cxx --prefix=%{_prefix}
 make
 
