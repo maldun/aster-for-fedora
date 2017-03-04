@@ -17,4 +17,4 @@ cd ${SPEC_DIR}
 export LD_LIBRARY_PATH=${ASTER_LIBS}/${MFRONT}/lib:$LD_LIBRARY_PATH
 export PATH=${ASTER_LIBS}/${MFRONT}/bin:$PATH
 
-QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-stable.spec --define "major_version $ASTER_STABLE" --define "sub_version $ASTER_STABLE_SUB" --define "mfront_version $MFRONT_VER" --define "aster_root $ASTER_BASE" --define "aster_libs $ASTER_LIBS" 
+QA_RPATHS=$[0x0001|0x0002] QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-stable.spec --define "major_version $ASTER_STABLE" --define "sub_version $ASTER_STABLE_SUB" --define "mfront_version $MFRONT_VER" --define "aster_root $ASTER_BASE" --define "aster_libs $ASTER_LIBS" 
