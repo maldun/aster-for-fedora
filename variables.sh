@@ -66,6 +66,8 @@ export METIS=metis-${METIS_VER}
 export SCOTCH=scotch-${SCOTCH_VER}
 export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
 export MFRONT=mfront-${MFRONT_VER}
+export PETSC_STABLE=petsc-${PETSC_STABLE_VER}
+export SCALAPACK_MPI=scalapack-openmpi-${SCALAPACK}
 
 ###################
 # functions        #

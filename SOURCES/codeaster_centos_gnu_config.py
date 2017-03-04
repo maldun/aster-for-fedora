@@ -7,7 +7,7 @@ Fichier de configuration WAF pour version séquentielle sur Centos 7:
 """
 import os
 from os import environ as envr
-aster_libdir = envr['ASTER_LIBS'] + os.sep #/cad/app/aster/public'
+aster_libdir = envr['ASTER_LIBS'] + os.sep 
 def configure(self):
     opts = self.options
     self.env.append_value('CFLAGS', ['-std=gnu9x'])
@@ -24,7 +24,6 @@ def configure(self):
         aster_libdir+ envr['MFRONT'] + '/lib',
         envr['OPENBLAS_DIR'] + '/lib',
         envr['SYSTEM_LIBS'],
-        #public + 'metis-4.0.3/lib/',
         ])
 
     self.env.append_value('INCLUDES', [
@@ -37,7 +36,6 @@ def configure(self):
         aster_libdir+ envr['MFRONT'] + '/include',
         envr['OPENBLAS_DIR'] + '/include',
         envr['SYSTEM_INCLUDE'],
-        #'/home/maldun/Salome_Meca/devel/aster_root/public/metis-4.0.3/include/',
         ])
 
     opts.maths_libs = 'openblas'

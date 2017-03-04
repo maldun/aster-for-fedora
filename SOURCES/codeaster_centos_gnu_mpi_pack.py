@@ -8,25 +8,18 @@ Fichier de configuration WAF pour version parallèle sur Centos 7:
 - Scalapack   : Self built V 3.2.0
 - PETSc       : 
 """
-
+import os
+from os import environ as envr
 import os.path as osp
 import sys
 
-aster_root='/cad/app/aster/'
-aster_libdir = aster_root + 'public/'
-mpi_dir = '/cad/app/openmpi/1.10.5/'
-#extlibs_intel = osp.expanduser("~/Salome_Meca/Code_Aster/Intel/extlibs/")
-
-# import auto_config
-#import aster_full_config
+aster_root=envr['ASTER_BASE'] + os.sep
+aster_libdir = envr['ASTER_LIBS'] + os.sep 
+mpi_dir = envr['MPI_DIR'] + os.sep 
 
 def configure(self):
-    #from Options import options as opts
-    #auto_config.configure(self)
-    #aster_full_config.configure(self)
     opts = self.options
     
-
     self.env['FC'] = 'mpif90'
     self.env['CC'] = 'mpicc'
     self.env['CXX'] = 'mpicxx'
@@ -38,36 +31,35 @@ def configure(self):
 
 
     
-    self.env.prepend_value('PATH',[aster_libdir + 'mfront-2.0.3/bin/'])
+    self.env.prepend_value('PATH',[aster_libdir + '/' + envr['MFRONT'] + '/bin/'])
     
     self.env.prepend_value('LIBPATH', [
-        #'/usr/lib64/python3.4/',
+        aster_libdir+ envr['HDF'] + '/lib',
+        aster_libdir+ envr['MED'] + '/lib64',
+        aster_libdir+ envr['METIS'] + '/lib',
+        aster_libdir+ envr['SCOTCH'] + '/lib',
+        aster_libdir+envr['MUMPS_STABLE'] + '-openmpi/lib',
+        aster_libdir+ envr['MFRONT'] + '/lib',
+        envr['OPENBLAS_DIR'] + '/lib',
+        envr['SYSTEM_LIBS'],
         mpi_dir+'lib',        
-        aster_libdir+'/hdf5-1.8.14/lib',
-        aster_libdir+'/med-3.2.0/lib64',
-        aster_libdir+'/metis-4.0.3/lib',
-        aster_libdir+'/scotch-5.1.11/lib',
-        aster_libdir+'/mumps-4.10.0-openmpi/lib',
-        aster_libdir+'/mfront-2.0.3/lib',
-        aster_libdir+'/OpenBLAS/lib',
-        '/usr/lib64',
-        aster_libdir + 'petsc-3.4.5/lib',
-        aster_libdir + 'scalapack-openmpi-2.0.2/lib',
+        aster_libdir + envr['PETSC_STABLE'] + '/lib',
+        aster_libdir + envr['SCALAPACK_MPI'] + '/lib',
         #'/opt/Parmetis/parmetis-4.0.3/build/Linux-x86_64/libmetis/',
         ])
 
     self.env.prepend_value('INCLUDES', [
         mpi_dir+'include',
         #aster_libdir +'/mumps-4.10.0-openmpi/include',
-        aster_libdir+'/hdf5-1.8.14/include',
-        aster_libdir+'/med-3.2.0/include',
-        aster_libdir+'/metis-4.0.3/include',
-        aster_libdir+'/scotch-5.1.11/include',
-        '/cad/app/aster/public/mfront-2.0.3/include',
-        aster_libdir+'/OpenBLAS/include',
-        '/usr/include',
-        aster_libdir + 'petsc-3.4.5/include',
-        aster_libdir + 'scalapack-openmpi-2.0.2/include',
+        aster_libdir+ envr['HDF'] + '/include',
+        aster_libdir+ envr['MED'] + '/include',
+        aster_libdir+ envr['METIS'] + '/include',
+        aster_libdir+ envr['SCOTCH'] + '/include',
+        aster_libdir+ envr['MFRONT'] + '/include',
+        envr['OPENBLAS_DIR'] + '/include',
+        envr['SYSTEM_INCLUDE'],
+        aster_libdir + envr['PETSC_STABLE'] + '/include',
+        aster_libdir + envr['SCALAPACK_MPI'] + '/include',
         ])
     
     self.env.append_value('LIB', ('X11',))
