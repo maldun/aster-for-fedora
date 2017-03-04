@@ -1,7 +1,7 @@
 %define version %{major_version}.%{sub_version}
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}
-%global config_file codeaster_centos_gnu_config
+%global config_file codeaster_fedora_gnu_config
 
 Name:           codeaster-stable
 Version:        %{version}
@@ -14,7 +14,7 @@ Source0:        codeaster-stable-%{version}.tar.gz
 Source1:        %{config_file}.py
 
 BuildRequires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront
-#BuildRequires:  openblas openblas-static openblas-devel
+BuildRequires:  openblas openblas-static openblas-devel
 
 %description
 Code_Aster offers a full range of multiphysical analysisand modelling methods that go well beyond the standard
