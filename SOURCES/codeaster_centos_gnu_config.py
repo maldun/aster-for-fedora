@@ -16,7 +16,7 @@ def configure(self):
     
 
     self.env.append_value('LIBPATH', [
-        aster_libdir+ envr['HFD'] + '/lib',
+        aster_libdir+ envr['HDF'] + '/lib',
         aster_libdir+ envr['MED'] + '/lib64',
         aster_libdir+ envr['METIS'] + '/lib',
         aster_libdir+ envr['SCOTCH'] + '/lib',
@@ -28,7 +28,7 @@ def configure(self):
         ])
 
     self.env.append_value('INCLUDES', [
-        aster_libdir+ envr['HFD'] + '/include',
+        aster_libdir+ envr['HDF'] + '/include',
         aster_libdir+ envr['MED'] + '/include',
         aster_libdir+ envr['METIS'] + '/include',
         aster_libdir+ envr['SCOTCH'] + '/include',
