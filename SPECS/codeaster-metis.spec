@@ -11,6 +11,7 @@ Source0:        codeaster-metis-%{version}.tar.gz
 
 BuildRequires: cmake
 BuildRequires: pcre-devel
+BuildRequires: openblas-static
 
 %description
 %description

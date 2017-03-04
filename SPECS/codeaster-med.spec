@@ -11,7 +11,9 @@ Summary:        med lib specific for Code_Aster
 License:        LGPLv3+
 URL:            http://www.code-aster.org/outils/med/
 Source0:        codeaster-med-%{version}.tar.gz
-
+Patch0:         med-3.0.7_tests.patch
+# Remove code with invalid syntax (probably was meant to be commented)
+Patch1:         med-3.1.0_invalid-syntax.patch
 
 BuildRequires:  codeaster-hdf5
 BuildRequires:  gcc-gfortran
@@ -24,6 +26,8 @@ This is the Code_Aster med package, which provides the optimal med library for C
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 # Fix file not utf8
 iconv --from=ISO-8859-1 --to=UTF-8 ChangeLog > ChangeLog.new && \
@@ -35,7 +39,7 @@ mv ChangeLog.new ChangeLog
 autoreconf -ivf
 
 export CFLAGS='-std=gnu9x -fno-stack-protector -O2 -fPIC'
-%configure --with-hdf5=%{hdf5_path} --disable-mesgerr --prefix=%{_prefix}
+%configure --with-hdf5=%{hdf5_path} --with-swig --disable-mesgerr --prefix=%{_prefix}
 make %{?_smp_mflags}
 
 %install

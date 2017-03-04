@@ -8,16 +8,17 @@ Summary:        hdf5 lib specific for Code_Aster
 License:        BSD
 URL:            http://code-aster.org/
 Source0:        codeaster-hdf5-%{version}.tar.gz
-Patch0:         hdf5-implicit.patch
 
 
 BuildRequires: krb5-devel, openssl-devel, zlib-devel, gcc-gfortran, time
-#BuildRequires: openblas-static
+BuildRequires: openblas-static
 # For patches/rpath
 BuildRequires: automake
 BuildRequires: libtool
 # Needed for mpi tests
 BuildRequires: openssh-clients
+# For autoreconf
+BuildRequires: autoconf automake libtool
 
 %description
 This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for code_aster
@@ -26,7 +27,8 @@ This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for cod
 %setup -q
 # Force shared by default for compiler wrappers (bug #1266645)
 sed -i -e '/^STATIC_AVAILABLE=/s/=.*/=no/' */*/h5[cf]*.in
-autoreconf -f -i
+# To remove rpath
+autoreconf -ivf
 
 %build
 #Do out of tree builds
