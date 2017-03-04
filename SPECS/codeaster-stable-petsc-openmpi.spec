@@ -1,13 +1,6 @@
-%global version 3.4.5
-%global scalapack_version 2.0.2
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/petsc-%{version}/
-%global openblasdir %{aster_libs}/OpenBLAS/lib
-%global mpidir /cad/app/openmpi/1.10.5
-%global includedir /usr/include
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
 Name:           codeaster-stable-petsc-openmpi
@@ -66,6 +59,8 @@ rm %{buildroot}%{_prefix}/bin/mpiexec.*.old
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 8 2017 Stefan Reiterer 12.7
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
