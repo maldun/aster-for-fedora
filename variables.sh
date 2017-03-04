@@ -24,6 +24,8 @@ export SYSTEM_INCLUDE=/usr/include
 export MPI_DIR=${SYSTEM_LIBS}/openmpi/
 export EXTLIBS=${ASTER_BASE}/public/
 export OPENBLAS_DIR=/usr/lib64
+export OPENBLAS_LIB=${OPENBLAS_DIR}
+export OPENBLAS_INC=${SYSTEM_INCLUDE}
 
 ###################
 # Install dirs    #

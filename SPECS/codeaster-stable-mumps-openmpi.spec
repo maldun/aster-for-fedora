@@ -1,4 +1,3 @@
-%global openblas_lib %{openblas_dir}/lib
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}-openmpi/
@@ -14,8 +13,8 @@ URL:            http://mumps.enseeiht.fr/
 Source0:        codeaster-stable-mumps-openmpi-%{version}.tar.gz
 Source1:        wscript-mumps-openmpi
 
-BuildRequires:	codeaster-metis codeaster-scotch codeaster-scalapack-openmpi
-#BuildRequires:  openblas openblas-static openblas-devel openmpi openmpi-devel
+Requires:	codeaster-metis codeaster-scotch codeaster-scalapack-openmpi
+Requires:  openblas openblas-static openblas-devel openmpi openmpi-devel
 
 %description
 %description
