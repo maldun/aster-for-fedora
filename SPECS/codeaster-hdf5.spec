@@ -24,7 +24,6 @@ This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for cod
 
 %prep
 %setup -q
-%patch0 -p1 -b .implicit
 # Force shared by default for compiler wrappers (bug #1266645)
 sed -i -e '/^STATIC_AVAILABLE=/s/=.*/=no/' */*/h5[cf]*.in
 autoreconf -f -i
