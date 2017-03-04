@@ -1,9 +1,3 @@
-%global major_version 12.7
-%global version %{major_version}.0
-%global mfront_version 2.0.3
-
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public/
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}
 %global config_file codeaster_centos_gnu_config
@@ -11,7 +5,7 @@
 Name:           codeaster-stable
 Version:        %{version}
 Release:        1%{?dist}
-Summary:	    Code_Aster finite element method solver. Testing version.
+Summary:	    Code_Aster finite element method solver. Stable version.
 
 License:        GPL2
 URL:            http://www.code-aster.org

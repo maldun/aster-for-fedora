@@ -17,4 +17,4 @@ cd ${SPEC_DIR}
 export LD_LIBRARY_PATH=/cad/app/aster/public/mfront-2.0.3/lib:$LD_LIBRARY_PATH
 export PATH=/cad/app/aster/public/mfront-2.0.3/bin:$PATH
 
-QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-stable.spec
+QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-stable.spec --define "major_version $ASTER_STABLE" --define "sub_version $ASTER_STABLE_SUB"

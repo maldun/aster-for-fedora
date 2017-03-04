@@ -5,7 +5,7 @@
 ###################
 
 ###################
-# aster       #
+# aster           #
 ###################
 
 export ASTER_BASE=/cad/app/aster
@@ -14,8 +14,14 @@ export ASTER_SUB=${ASTER_VER}.0
 export ASTER_FULL=aster-full-src-${ASTER_SUB}-1.noarch.tar.gz
 export ASTER_ROOT=${ASTER_BASE}/${ASTER_VER}
 export ASTER_LIBS=${ASTER_BASE}/public
+
+###################
+# External libs   #
+###################
+
 export EXTLIBS=${ASTER_BASE}/public/
 export OPENBLAS_DIR=${EXTLIBS}/OpenBLAS
+export OPENMPI_DIR=/cad/app/openmpi/1.10.5
 
 ###################
 # Install dirs    #
