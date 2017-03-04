@@ -21,7 +21,7 @@ export ASTER_LIBS=${ASTER_BASE}/public
 
 export EXTLIBS=${ASTER_BASE}/public/
 export OPENBLAS_DIR=${EXTLIBS}/OpenBLAS
-export OPENMPI_DIR=/cad/app/openmpi/1.10.5
+export MPI_DIR=/cad/app/openmpi/1.10.5
 
 ###################
 # Install dirs    #

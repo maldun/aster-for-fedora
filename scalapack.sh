@@ -11,4 +11,4 @@ tar cvzf codeaster-scalapack-openmpi-${SCALAPACK}.tar.gz codeaster-scalapack-ope
 cp codeaster-scalapack-openmpi-${SCALAPACK}.tar.gz ${SOURCE_DIR}
 cd ${SPEC_DIR}
 
-QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-scalapack-openmpi.spec
+QA_SKIP_BUILD_ROOT=1 rpmbuild -ba codeaster-scalapack-openmpi.spec --define "version $SCALAPACK" --define "aster_libs $ASTER_LIBS" --define "aster_root $ASTER_BASE" --define "openblasdir $OPENBLAS_DIR" --define "mpidir $MPI_DIR" --define "installer_version $SCALAPACK_INSTALLER"
