@@ -1,10 +1,5 @@
-%global version 2.0.3
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global _prefix %{aster_libs}/mfront-%{version}/
-%global libdir /usr/lib64
-%global mpidir %{libdir}/openmpi
 
 Name:           codeaster-mfront
 Version:        %{version}

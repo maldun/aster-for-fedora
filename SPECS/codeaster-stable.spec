@@ -1,3 +1,4 @@
+%define version %{major_version}.%{sub_version}
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}
 %global config_file codeaster_centos_gnu_config
