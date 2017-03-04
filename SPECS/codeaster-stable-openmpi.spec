@@ -2,7 +2,7 @@
 
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}mpi
-%global config_file codeaster_centos_gnu_mpi_pack
+%global config_file codeaster_fedora_gnu_mpi_pack
 
 Name:           codeaster-stable-openmpi
 Version:        %{version}
@@ -16,8 +16,8 @@ Source1:        %{config_file}.py
 
 AutoReqProv: no
 
-BuildRequires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront codeaster-stable-petsc-openmpi libX11-devel
-#BuildRequires:  openblas openblas-static openblas-devel openmpi openmpi-devel
+Requires:	codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront codeaster-stable-petsc-openmpi libX11-devel
+Requires:  openblas openblas-static openblas-devel openmpi openmpi-devel
 
 %description
 Code_Aster offers a full range of multiphysical analysisand modelling methods that go well beyond the standard
