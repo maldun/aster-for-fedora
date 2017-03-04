@@ -37,7 +37,7 @@ mkdir -p %{buildroot}%{aster_root}/outils
 cd %{buildroot}%{_prefix}
 rm -f homard
 ln -sf ASTER_HOMARD/homard homard
-ln -sf ASTER_HOMARD/homard ../../outils/homard
+ln -sf %{_prefix}/homard ../../outils/homard
 
 %post
 

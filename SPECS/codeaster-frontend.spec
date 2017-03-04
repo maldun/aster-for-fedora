@@ -17,9 +17,10 @@ Requires: python
 BuildRequires: python-setuptools
 Requires: xterm, nedit
 Requires: flex, tk, numpy
-#BuildRequires: gmsh
+BuildRequires: gmsh
+Requires: gmsh
 Requires: codeaster-metis
-BuildRequires: grace
+Requires: grace
 
 Requires(post): info
 Requires(preun): info
@@ -38,14 +39,14 @@ This is the Code_Aster Frontend package, which provides the program structure fo
 cp %SOURCE1 %{buildroot}%{aster_root}/etc/codeaster/asrun
 cp %SOURCE2 %{buildroot}%{aster_root}/etc/codeaster/profile_local.sh
 
-#mkdir -p ${RPM_BUILD_ROOT}%{_bindir}
-#ln -sf %{aster_root}/bin/astk %{buildroot}/%{_bindir}
-#ln -sf %{aster_root}/bin/as_run %{buildroot}/%{_bindir}
+mkdir -p ${RPM_BUILD_ROOT}%{_bindir}
+ln -sf %{aster_root}/bin/astk %{buildroot}/%{_bindir}
+ln -sf %{aster_root}/bin/as_run %{buildroot}/%{_bindir}
 
 %global outils_dir %{aster_root}/outils
 mkdir -p %{buildroot}/%{outils_dir} 
 cd %{buildroot}/%{outils_dir}
-#ln -sf %{_bindir}/gmsh gmsh
+ln -sf %{_bindir}/gmsh gmsh
 ln -sf %{_bindir}/xmgrace xmgrace
 ln -sf %{_bindir}/xmgrace xmgrace
 ln -sf %{aster_libs}/metis-%{metis_version}/bin/kmetis kmetis
