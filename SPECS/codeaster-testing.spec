@@ -1,24 +1,20 @@
-%global major_version 13.1
-%global version %{major_version}.0
-%global mfront_version 2.0.3
-
-%global aster_root /opt/Code_Aster/aster_root
-%global aster_libs /usr/lib64/codeaster/
+%define version %{major_version}.%{sub_version}
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}
 %global config_file codeaster_fedora_gnu_config
 
-Name:           codeaster-testing
+Name:           codeaster-stable
 Version:        %{version}
 Release:        1%{?dist}
-Summary:	    Code_Aster finite element method solver. Testing version.
+Summary:	    Code_Aster finite element method solver. Stable version.
 
 License:        GPL2
 URL:            http://www.code-aster.org
-Source0:        codeaster-testing-%{version}.tar.gz
+Source0:        codeaster-stable-%{version}.tar.gz
 Source1:        %{config_file}.py
 
-BuildRequires:	codeaster-metis codeaster-scotch openblas openblas-static openblas-devel codeaster-frontend codeaster-mfront
+Requires:  codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront
+Requires:  openblas openblas-static openblas-devel
 
 %description
 Code_Aster offers a full range of multiphysical analysisand modelling methods that go well beyond the standard
@@ -32,13 +28,13 @@ This is the testing version.
 %prep
 %setup -q
 cp %SOURCE1 wafcfg/
-export PATH=%{aster_libs}/mfront-%{mfront_version}/bin:$PATH; export LD_LIBRARY_PATH=%{aster_libs}/mfront-%{mfront_version}/lib:$LD_LIBRARY_PATH; ./waf configure --use-config-dir=wafcfg --use-config=%{config_file} --prefix=%{buildroot}%{_prefix}
+export PATH=%{aster_libs}/mfront-%{mfront_version}/bin:$PATH; export LD_LIBRARY_PATH=%{aster_libs}/mfront-%{mfront_version}/lib:$LD_LIBRARY_PATH; ./waf configure --use-config-dir=wafcfg --use-config=%{config_file} --prefix=%{_prefix}
 
 %build
 
 %install
 rm -rf %{buildroot}
-./waf install -p
+./waf install --destdir=%{buildroot} -p
 %post
 echo "vers : %{major_version}:%{aster_root}/%{major_version}/share/aster" >> %{aster_root}/etc/codeaster/aster
 
@@ -54,6 +50,8 @@ sed --in-place '\|vers : %{major_version}:%{aster_root}/%{major_version}/share/a
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 8 2017 Stefan Reiterer 12.7
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec

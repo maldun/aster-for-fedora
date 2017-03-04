@@ -73,6 +73,7 @@ export METIS_TEST_SUB=aster1
 export SCOTCH_TEST_VER=6.0.4
 export SCOTCH_TEST_SUB=aster5
 export MUMPS_TEST_VER=5.0.2
+export MUMPS_TEST_SUB=aster
 
 ###################
 # Packages        #
@@ -85,6 +86,7 @@ export METIS_TEST=metis-${METIS_TEST_VER}
 export SCOTCH=scotch-${SCOTCH_VER}
 export SCOTCH_TEST=scotch-${SCOTCH_TEST_VER}
 export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
+export MUMPS_TEST=mumps-${MUMPS_TEST_VER}
 export MFRONT=mfront-${MFRONT_VER}
 export PETSC_STABLE=petsc-${PETSC_STABLE_VER}
 export SCALAPACK_MPI=scalapack-openmpi-${SCALAPACK}
