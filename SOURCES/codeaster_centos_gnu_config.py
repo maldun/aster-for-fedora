@@ -6,7 +6,7 @@ Fichier de configuration WAF pour version séquentielle sur Centos 7:
 - BLAS        : OpenBLAS
 """
 import os
-import os.environ as envr
+from os import environ as envr
 aster_libdir = envr['ASTER_LIBS'] + os.sep #/cad/app/aster/public'
 def configure(self):
     opts = self.options
