@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 """
-Fichier de configuration WAF pour version séquentielle sur Centos 7:
+Fichier de configuration WAF pour version séquentielle sur Fedora (25):
 - Compilateur : GNU
 - BLAS        : OpenBLAS
 """
