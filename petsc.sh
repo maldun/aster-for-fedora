@@ -5,7 +5,7 @@
 source "$(dirname "$0")"/variables.sh
 export PETSC_STABLE=petsc-${PETSC_STABLE_VER}
 export PETSC_STABLE_MPI=stable-petsc-openmpi-${PETSC_STABLE_VER}
-export PATH=/cad/app/openmpi/1.10.5/bin:$PATH
+export PATH=${MPI_DIR}/bin:$PATH
 
 cd ${DOWNL}
 mv ${PETSC_STABLE}.tar.gz aster-full-src-${ASTER_SUB}/SRC/

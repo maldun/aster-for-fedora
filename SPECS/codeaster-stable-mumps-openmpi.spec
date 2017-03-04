@@ -1,15 +1,7 @@
-%global version 4.10.0
-%global scalapack_version 2.0.2
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public/
-%global openblas_lib %{aster_libs}/OpenBLAS/lib
-%global metis_ver 4.0.3
-%global scotch_ver 5.1.11
+%global openblas_lib %{openblas_dir}/lib
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 %global _prefix %{aster_libs}/mumps-%{version}-openmpi/
-%global libdir /usr/lib64
-%global mpidir /cad/app/openmpi/1.10.5
 %global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
 
 Name:           codeaster-stable-mumps-openmpi
@@ -32,7 +24,7 @@ This is the Code_Aster specific package, which provides the optimal mumps lib fo
 
 %prep
 %setup -q
-LIBPATH="%{openblas_lib} %{scalapackdir}/lib %{mpidir}/lib %{aster_libs}scotch-%{scotch_ver}/lib  %{aster_libs}metis-%{metis_ver}/lib/ %{libdir}" INCLUDES="%{scalapackdir}/include %{aster_libs}scotch-%{scotch_ver}/include/ %{aster_libs}metis-%{metis_ver}/include %{mpidir}/include/" ./waf configure --enable-mpi --maths-libs="openblas scalapack" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
+LIBPATH="%{openblas_lib} %{scalapackdir}/lib %{mpidir}/lib %{aster_libs}scotch-%{scotch_ver}/lib  %{aster_libs}/metis-%{metis_ver}/lib/ %{libdir}" INCLUDES="%{scalapackdir}/include %{aster_libs}/scotch-%{scotch_ver}/include/ %{aster_libs}/metis-%{metis_ver}/include %{mpidir}/include/" ./waf configure --enable-mpi --maths-libs="openblas scalapack" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
 # patch for build
 cp %SOURCE1 wscript
 ./waf build
