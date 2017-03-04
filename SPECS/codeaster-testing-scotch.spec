@@ -52,7 +52,7 @@ rm -rf %{buildroot}%{_prefix}/share
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Wed March 7 2017 Stefan Reiterer 6.0.4-aster5
+* Sat Mar 3 2017 Stefan Reiterer 6.0.4-aster5
 - Adaption for fedora (personal)
 * Wed Feb 8 2017 Stefan Reiterer 5.1.11-aster3
 - Adaption for centos (personal)

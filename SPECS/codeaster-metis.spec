@@ -35,7 +35,7 @@ export CFLAGS='-std=gnu9x -fno-stack-protector -O2 -fPIC'
 export CC=gcc
 export CXX=g++
 export F9X=gfortran
-export LDFLAGS='-l%{openblas_dir}/lib/libopenblas.a'
+export LDFLAGS='-l%{openblas_lib}/libopenblas.a'
 make
 
 %install
