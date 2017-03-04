@@ -11,7 +11,7 @@ URL:            http://www.labri.fr/perso/pelegrin/scotch/
 Source0:        codeaster-scotch-%{version}.tar.gz
 Source1:        scotch-Makefile.inc.in
 
-BuildRequires:	flex bison mpich-devel zlib-devel bzip2-devel openblas lzma-devel
+Requires:	flex bison mpich-devel zlib-devel bzip2-devel openblas lzma-devel
 
 %description
 %description

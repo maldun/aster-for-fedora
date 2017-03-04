@@ -13,11 +13,12 @@ Source1:        codeaster_asrun
 Source2:        codeaster_profile_local.sh
 
 
-BuildRequires: python
+Requires: python
 BuildRequires: python-setuptools
-BuildRequires: xterm, nedit
+Requires: xterm, nedit
+Requires: flex, tk, numpy
 #BuildRequires: gmsh
-BuildRequires: codeaster-metis
+Requires: codeaster-metis
 BuildRequires: grace
 
 Requires(post): info
