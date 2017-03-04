@@ -80,6 +80,7 @@ export MUMPS_TEST_VER=5.0.2
 export HDF=hdf5-${HDF_VER}
 export MED=med-${MED_VER}
 export METIS=metis-${METIS_VER}
+export METIS_TEST=metis-${METIS_TEST_VER}
 export SCOTCH=scotch-${SCOTCH_VER}
 export SCOTCH_TEST=scotch-${SCOTCH_TEST_VER}
 export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}

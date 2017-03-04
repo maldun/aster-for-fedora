@@ -1,14 +1,14 @@
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
 
-Name:           codeaster-scotch
+Name:           codeaster-testing-scotch
 Version:        %{version}
 Release:        1%{?dist}
 Summary:	    Graph, mesh and hypergraph partitioning library; specifically for Code_Aster
 
 License:        CeCILL-C
 URL:            http://www.labri.fr/perso/pelegrin/scotch/
-Source0:        codeaster-scotch-%{version}.tar.gz
+Source0:        codeaster-testing-scotch-%{version}.tar.gz
 Source1:        scotch-Makefile.inc.in
 
 Requires:	flex bison mpich-devel zlib-devel bzip2-devel openblas lzma-devel
@@ -52,6 +52,8 @@ rm -rf %{buildroot}%{_prefix}/share
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed March 7 2017 Stefan Reiterer 6.0.4-aster5
+- Adaption for fedora (personal)
 * Wed Feb 8 2017 Stefan Reiterer 5.1.11-aster3
 - Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
