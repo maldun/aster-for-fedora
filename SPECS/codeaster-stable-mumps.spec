@@ -21,7 +21,7 @@ This is the Code_Aster specific package, which provides the optimal mumps lib fo
 
 %prep
 %setup -q
-LIBPATH="%{aster_libs}scotch-%{scotch_version}/lib  %{aster_libs}metis-%{metis_version}/lib/ %{openblas_dir}/lib /usr/lib64/" INCLUDES="%{aster_libs}scotch-%{scotch_version}/include/ %{aster_libs}metis-%{metis_version}/include %{openblas_dir}/include" ./waf configure --maths-libs="openblas" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
+LIBPATH="%{aster_libs}/scotch-%{scotch_version}/lib  %{aster_libs}/metis-%{metis_version}/lib/ %{openblas_dir}/lib /usr/lib64/" INCLUDES="%{aster_libs}/scotch-%{scotch_version}/include/ %{aster_libs}/metis-%{metis_version}/include %{openblas_inc}/include" ./waf configure --maths-libs="openblas" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
 
 
 %build
