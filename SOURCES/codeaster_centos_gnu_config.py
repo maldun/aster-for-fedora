@@ -5,36 +5,38 @@ Fichier de configuration WAF pour version séquentielle sur Centos 7:
 - Compilateur : GNU
 - BLAS        : OpenBLAS
 """
-aster_libdir = '/cad/app/aster/public'
+import os
+import os.environ as envr
+aster_libdir = envr['ASTER_LIBS'] + os.sep #/cad/app/aster/public'
 def configure(self):
     opts = self.options
     self.env.append_value('CFLAGS', ['-std=gnu9x'])
-    self.env.prepend_value('PATH',[aster_libdir + '/mfront-2.0.3/bin/'])
+    self.env.prepend_value('PATH',[aster_libdir + '/' + envr['MFRONT'] + '/bin/'])
     self.env.append_value('LDFLAGS', ['-Wl,--no-as-needed','-ldl'])
     
 
     self.env.append_value('LIBPATH', [
-        aster_libdir+'/hdf5-1.8.14/lib',
-        aster_libdir+'/med-3.2.0/lib64',
-        aster_libdir+'/metis-4.0.3/lib',
-        aster_libdir+'/scotch-5.1.11/lib',
-        aster_libdir+'/mumps-4.10.0/lib',
-        aster_libdir+'/mfront-2.0.3/lib',
-        aster_libdir+'/OpenBLAS/lib',
-        '/usr/lib64',
+        aster_libdir+ envr['HFD'] + '/lib',
+        aster_libdir+ envr['MED'] + '/lib64',
+        aster_libdir+ envr['METIS'] + '/lib',
+        aster_libdir+ envr['SCOTCH'] + '/lib',
+        aster_libdir+envr['MUMPS_STABLE'] + '/lib',
+        aster_libdir+ envr['MFRONT'] + '/lib',
+        envr['OPENBLAS_DIR'] + '/lib',
+        envr['SYSTEM_LIBS'],
         #public + 'metis-4.0.3/lib/',
         ])
 
     self.env.append_value('INCLUDES', [
-        aster_libdir+'/hdf5-1.8.14/include',
-        aster_libdir+'/med-3.2.0/include',
-        aster_libdir+'/metis-4.0.3/include',
-        aster_libdir+'/scotch-5.1.11/include',
+        aster_libdir+ envr['HFD'] + '/include',
+        aster_libdir+ envr['MED'] + '/include',
+        aster_libdir+ envr['METIS'] + '/include',
+        aster_libdir+ envr['SCOTCH'] + '/include',
         #aster_libdir+'/mumps-4.10.0/include_seq',
         #aster_libdir+'/mumps-4.10.0/include',
-        aster_libdir+'/mfront-2.0.3/include',
-        aster_libdir+'/OpenBLAS/include',
-        '/usr/include',
+        aster_libdir+ envr['MFRONT'] + '/include',
+        envr['OPENBLAS_DIR'] + '/include',
+        envr['SYSTEM_INCLUDE'],
         #'/home/maldun/Salome_Meca/devel/aster_root/public/metis-4.0.3/include/',
         ])
 
