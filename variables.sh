@@ -16,6 +16,14 @@ export ASTER_ROOT=${ASTER_BASE}/${ASTER_VER}
 export ASTER_LIBS=${ASTER_BASE}/public
 
 ###################
+# aster-testing   #
+###################
+
+export ASTER_TESTING_VER=13.3
+export ASTER_TESTING_SUB=${ASTER_TESTING_VER}.0
+export ASTER_TESTING_FULL=aster-full-src-${ASTER_TESTING_SUB}-1.noarch.tar.gz
+
+###################
 # External libs   #
 ###################
 
@@ -59,6 +67,10 @@ export HOMARD_SUB=1
 export SCALAPACK=2.0.2
 export SCALAPACK_INSTALLER=1.0.2
 export PETSC_STABLE_VER=3.4.5
+
+export METIS_TEST_VER=5.1.0
+export SCOTCH_TEST_VER=6.0.4
+export SCOTCH_TEST_SUB=aster5
 
 ###################
 # Packages        #
