@@ -71,6 +71,7 @@ export PETSC_STABLE_VER=3.4.5
 export METIS_TEST_VER=5.1.0
 export SCOTCH_TEST_VER=6.0.4
 export SCOTCH_TEST_SUB=aster5
+export MUMPS_TEST_VER=5.0.2
 
 ###################
 # Packages        #
