@@ -58,10 +58,10 @@ ln -sf %{aster_libs}/metis-%{metis_version}/bin/kmetis pmetis
 %defattr(-,root,root)
 %doc README TODO
 %{aster_root}/*
-#%{_bindir}/astk
-#%{_bindir}/as_run
+%{_bindir}/astk
+%{_bindir}/as_run
 %{outils_dir}/xmgrace
-#%{outils_dir}/gmsh
+%{outils_dir}/gmsh
 %{outils_dir}/*metis
 
 %clean
