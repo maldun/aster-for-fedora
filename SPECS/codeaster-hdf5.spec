@@ -8,6 +8,7 @@ Summary:        hdf5 lib specific for Code_Aster
 License:        BSD
 URL:            http://code-aster.org/
 Source0:        codeaster-hdf5-%{version}.tar.gz
+Patch0:         hdf5-implicit.patch
 
 
 BuildRequires: krb5-devel, openssl-devel, zlib-devel, gcc-gfortran, time
@@ -23,6 +24,10 @@ This is the Code_Aster hdf5 package, which provides the optimal hdf5 lib for cod
 
 %prep
 %setup -q
+%patch0 -p1 -b .implicit
+# Force shared by default for compiler wrappers (bug #1266645)
+sed -i -e '/^STATIC_AVAILABLE=/s/=.*/=no/' */*/h5[cf]*.in
+autoreconf -f -i
 
 %build
 #Do out of tree builds

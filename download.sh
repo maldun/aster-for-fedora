@@ -7,8 +7,8 @@ source "$(dirname "$0")"/variables.sh
 # Paths        #
 ################
 
-mkdir -p ${ASTER_BASE}
-mkdir -p ${EXTLIBS}
+#sudo mkdir -p ${ASTER_BASE}
+#sudo mkdir -p ${EXTLIBS}
 
 #########################
 # Downloads
