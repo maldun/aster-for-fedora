@@ -81,6 +81,7 @@ export HDF=hdf5-${HDF_VER}
 export MED=med-${MED_VER}
 export METIS=metis-${METIS_VER}
 export SCOTCH=scotch-${SCOTCH_VER}
+export SCOTCH_TEST=scotch-${SCOTCH_TEST_VER}
 export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
 export MFRONT=mfront-${MFRONT_VER}
 export PETSC_STABLE=petsc-${PETSC_STABLE_VER}
@@ -115,6 +116,17 @@ function copy_pkg_type () {
 function copy_pkg_type_mpi () {
    cd ${DOWNL}
    cd aster-full-src-${ASTER_SUB}/SRC
+
+   tar -xvf $2.$4
+   mv $1 codeaster-$3
+   tar cvzf codeaster-$3.tar.gz codeaster-$3
+   cp codeaster-$3.tar.gz ${SOURCE_DIR}
+   cd ${SPEC_DIR}
+}
+
+function copy_pkg_type_testing () {
+   cd ${DOWNL}
+   cd aster-full-src-${ASTER_TESTING_SUB}/SRC
 
    tar -xvf $2.$4
    mv $1 codeaster-$3
