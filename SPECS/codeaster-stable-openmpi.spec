@@ -1,13 +1,8 @@
-%global major_version 12.7
-%global version %{major_version}.0
-%global mfront_version 2.0.3
+%define version %{major_version}.%{sub_version}
 
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}mpi
 %global config_file codeaster_centos_gnu_mpi_pack
-%global mpidir /cad/app/openmpi/1.10.5/
 
 Name:           codeaster-stable-openmpi
 Version:        %{version}
@@ -65,6 +60,8 @@ sed --in-place '\|PATH=$MPI_DIR/bin:$PATH|d' %{aster_root}/etc/codeaster/profile
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 8 2017 Stefan Reiterer 12.7
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
