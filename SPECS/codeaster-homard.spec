@@ -1,10 +1,6 @@
-%global version 12.7
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public
 %define debug_package %{nil}
-%global libdir /usr/lib64
-%global mpidir /usr/lib64/openmpi
-%global _prefix %{aster_root}/public/homard-%{version}/
+%define version %{major_version}
+%global _prefix %{aster_libs}/homard-%{version}/
 
 Name:           codeaster-homard
 Version:        %{version}
