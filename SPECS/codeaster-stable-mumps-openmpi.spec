@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 %global _optflags -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic
-%global _prefix %{aster_libs}/mumps-%{version}-openmpi/
-%global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}/
+%global _prefix %{aster_libs}/mumps-%{version}-openmpi
+%global scalapackdir %{aster_libs}/scalapack-openmpi-%{scalapack_version}
 
 Name:           codeaster-stable-mumps-openmpi
 Version:        %{version}
@@ -23,12 +23,12 @@ This is the Code_Aster specific package, which provides the optimal mumps lib fo
 
 %prep
 %setup -q
-LIBPATH="%{openblas_lib} %{scalapackdir}/lib %{mpidir}/lib %{aster_libs}scotch-%{scotch_version}/lib  %{aster_libs}/metis-%{metis_version}/lib/ %{libdir}" INCLUDES="%{scalapackdir}/include %{aster_libs}/scotch-%{scotch_version}/include/ %{aster_libs}/metis-%{metis_version}/include %{mpidir}/include/" ./waf configure --enable-mpi --maths-libs="openblas scalapack" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
+LIBPATH="%{openblas_lib} %{scalapackdir}/lib %{mpidir}/lib %{aster_libs}/scotch-%{scotch_version}/lib  %{aster_libs}/metis-%{metis_version}/lib/ %{libdir}" INCLUDES="%{scalapackdir}/include %{aster_libs}/scotch-%{scotch_version}/include/ %{aster_libs}/metis-%{metis_version}/include %{mpidir}/include/" ./waf configure --enable-mpi --maths-libs="openblas scalapack" --embed-maths --install-tests --prefix=%{buildroot}%{_prefix}
 # patch for build
 cp %SOURCE1 wscript
 ./waf build
 mv Makefile.inc Makefile.inc.old
-sed 's|LIBPAR =|SCALAP = %{scalapackdir}/lib/libscalapack.a %{openblas_lib}/libopenblas.a\nLIBPAR = $(SCALAP)  -L%{mpidir}/lib/ -lmpi #-lmpi_f77|' < Makefile.inc.old > Makefile.inc
+sed 's|LIBPAR =|SCALAP = %{scalapackdir}/lib/libscalapack.a %{openblas_lib}/libopenblas.a %{aster_libs}/metis-%{metis_version}/lib/libmetis.a\nLIBPAR = $(SCALAP)  -L%{mpidir}/lib/ -lmpi #-lmpi_f77|' < Makefile.inc.old > Makefile.inc
 
 %build
 make all
@@ -36,11 +36,11 @@ make all
 %install
 rm -rf %{buildroot}
 rm lib/.place_holder
-mkdir -p %{buildroot}%{_prefix}include_seq
+mkdir -p %{buildroot}%{_prefix}/include_seq
 cp -r include %{buildroot}%{_prefix}/
 cp -r lib %{buildroot}%{_prefix}/
-cp libseq/mpi.h %{buildroot}%{_prefix}include_seq/
-cp libseq/mpif.h %{buildroot}%{_prefix}include_seq/
+cp libseq/mpi.h %{buildroot}%{_prefix}/include_seq/
+cp libseq/mpif.h %{buildroot}%{_prefix}/include_seq/
 
 %post
 
