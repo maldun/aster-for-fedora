@@ -1,6 +1,3 @@
-%global aster_root /cad/app/aster
-%global aster_libs %{aster_root}/public
-%global metis_version 4.0.3
 %define debug_package %{nil}
 
 
@@ -11,7 +8,7 @@ Summary:        The Code_Aster-Frontend Package/Structure
 
 License:        GPLv2
 URL:            https://bitbucket.org/code_aster/codeaster-frontend
-Source0:        https://bitbucket.org/code_aster/codeaster-frontend/codeaster-frontend-1.13.9.tar.gz
+Source0:        https://bitbucket.org/code_aster/codeaster-frontend/codeaster-frontend-%{version}.tar.gz
 Source1:        codeaster_asrun
 Source2:        codeaster_profile_local.sh
 
