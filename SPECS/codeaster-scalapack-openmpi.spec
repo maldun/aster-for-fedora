@@ -70,6 +70,8 @@ mkdir -p %{buildroot}%{_prefix}
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Feb 8 2017 Stefan Reiterer 12.7
+- Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
