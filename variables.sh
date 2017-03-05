@@ -68,6 +68,7 @@ export HOMARD_SUB=1
 export SCALAPACK=2.0.2
 export SCALAPACK_INSTALLER=1.0.2
 export PETSC_STABLE_VER=3.4.5
+export PETSC_TEST_VER=3.7.3
 
 export METIS_TEST_VER=5.1.0
 export METIS_TEST_SUB=aster1
@@ -90,6 +91,7 @@ export MUMPS_STABLE=mumps-${MUMPS_STABLE_VER}
 export MUMPS_TEST=mumps-${MUMPS_TEST_VER}
 export MFRONT=mfront-${MFRONT_VER}
 export PETSC_STABLE=petsc-${PETSC_STABLE_VER}
+export PETSC_TEST=petsc-${PETSC_TEST_VER}
 export SCALAPACK_MPI=scalapack-openmpi-${SCALAPACK}
 
 ###################

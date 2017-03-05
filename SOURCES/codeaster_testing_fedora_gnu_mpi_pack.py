@@ -84,7 +84,7 @@ def configure(self):
     #opts.scotch_libs   = 'ptesmumps ptscotch ptscotcherr'
     opts.mumps_libs = 'dmumps zmumps smumps cmumps mumps_common pord metis scalapack openblas esmumps scotch scotcherr'
     
-    opts.enable_petsc = True
+    opts.enable_petsc = False
     opts.petsc_libs='petsc'
     opts.embed_petsc = True
 

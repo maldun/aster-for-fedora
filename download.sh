@@ -21,6 +21,7 @@ wget http://code-aster.org/FICHIERS/aster-full-src-12.7.0-1.noarch.tar.gz
 wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
 wget http://www.netlib.org/scalapack/scalapack_installer.tgz
 wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.4.5.tar.gz
+wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.7.3.tar.gz
 
 ################
 # yum packages #

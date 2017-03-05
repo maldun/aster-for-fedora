@@ -13,6 +13,7 @@ License:        GPL2
 URL:            http://www.code-aster.org
 Source0:        codeaster-testing-openmpi-%{version}.tar.gz
 Source1:        %{config_file}.py
+Patch0:         mathematics.patch
 
 AutoReqProv: no
 
@@ -30,6 +31,7 @@ This is the testing version.
 
 %prep
 %setup -q
+%patch0 -p1
 cp %SOURCE1 wafcfg/
 export PATH=%{mpidir}/bin:%{aster_libs}/mfront-%{mfront_version}/bin:$PATH; export LD_LIBRARY_PATH=%{mpidir}/include:%{aster_libs}/mfront-%{mfront_version}/lib:$LD_LIBRARY_PATH; ./waf configure --use-config-dir=wafcfg --use-config=%{config_file} --prefix=%{_prefix}
 
