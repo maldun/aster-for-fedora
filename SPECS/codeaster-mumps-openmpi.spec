@@ -60,6 +60,8 @@ cp libseq/mpif.h %{buildroot}%{_prefix}include_seq/
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Sat Mar 3 2017 Stefan Reiterer 5.0.2-aster
+- Adaption for fedora (personal)
 * Thu May 12 2016 Stefan Reiterer
 - Initial version of the package
 - Build with QA_SKIP_BUILD_ROOT=1 rpmbuild -ba name.spec
