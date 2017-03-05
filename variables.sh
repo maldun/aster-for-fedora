@@ -20,7 +20,8 @@ export ASTER_LIBS=${ASTER_BASE}/public
 ###################
 
 export ASTER_TESTING_VER=13.3
-export ASTER_TESTING_SUB=${ASTER_TESTING_VER}.0
+export ASTER_TESTING_SUB_VER=0
+export ASTER_TESTING_SUB=${ASTER_TESTING_VER}.${ASTER_TESTING_SUB_VER}
 export ASTER_TESTING_FULL=aster-full-src-${ASTER_TESTING_SUB}-1.noarch.tar.gz
 
 ###################

@@ -30,7 +30,7 @@ rm -f src/Makefile.inc.old
 %global _prefix %{aster_libs}/scotch-%{version}/
 #Serial build
 cd src/
-make %{?_smp_mflags}
+make esmumps %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}

@@ -3,14 +3,14 @@
 %global _prefix %{aster_root}/%{major_version}
 %global config_file codeaster_testing_fedora_gnu_config
 
-Name:           codeaster-stable
+Name:           codeaster-testing
 Version:        %{version}
 Release:        1%{?dist}
 Summary:	    Code_Aster finite element method solver. Stable version.
 
 License:        GPL2
 URL:            http://www.code-aster.org
-Source0:        codeaster-stable-%{version}.tar.gz
+Source0:        codeaster-testing-%{version}.tar.gz
 Source1:        %{config_file}.py
 
 Requires:  codeaster-testing-metis codeaster-testing-scotch codeaster-frontend codeaster-mfront
