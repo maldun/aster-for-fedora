@@ -43,7 +43,7 @@ def configure(self):
         envr['OPENBLAS_DIR'] + '/lib',
         envr['SYSTEM_LIBS'],
         mpi_dir+'lib',        
-        aster_libdir + envr['PETSC_STABLE'] + '/lib',
+        aster_libdir + envr['PETSC_TEST'] + '/lib',
         aster_libdir + envr['SCALAPACK_MPI'] + '/lib',
         #'/opt/Parmetis/parmetis-4.0.3/build/Linux-x86_64/libmetis/',
         ])
@@ -60,7 +60,7 @@ def configure(self):
         aster_libdir+ envr['MFRONT'] + '/include',
         envr['OPENBLAS_DIR'] + '/include',
         envr['SYSTEM_INCLUDE'],
-        aster_libdir + envr['PETSC_STABLE'] + '/include',
+        aster_libdir + envr['PETSC_TEST'] + '/include',
         aster_libdir + envr['SCALAPACK_MPI'] + '/include',
         ])
     
@@ -84,7 +84,7 @@ def configure(self):
     #opts.scotch_libs   = 'ptesmumps ptscotch ptscotcherr'
     opts.mumps_libs = 'dmumps zmumps smumps cmumps mumps_common pord metis scalapack openblas esmumps scotch scotcherr'
     
-    opts.enable_petsc = False
+    opts.enable_petsc = True
     opts.petsc_libs='petsc'
     opts.embed_petsc = True
 

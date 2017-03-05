@@ -32,15 +32,22 @@ sed 's|LIBPAR =|SCALAP = %{scalapackdir}/lib/libscalapack.a %{openblas_lib}/libo
 
 %build
 make all
+# libseq has to be done manually
+cd libseq
+make all
+cd ..
 
 %install
 rm -rf %{buildroot}
 rm lib/.place_holder
 mkdir -p %{buildroot}%{_prefix}/include_seq
+mkdir -p %{buildroot}%{_prefix}/libseq
 cp -r include %{buildroot}%{_prefix}/
 cp -r lib %{buildroot}%{_prefix}/
 cp libseq/mpi.h %{buildroot}%{_prefix}/include_seq/
 cp libseq/mpif.h %{buildroot}%{_prefix}/include_seq/
+cp libseq/libmpiseq.a %{buildroot}%{_prefix}/libseq/
+cp libseq/libmpiseq.a %{buildroot}%{_prefix}/lib/
 
 %post
 
@@ -48,6 +55,7 @@ cp libseq/mpif.h %{buildroot}%{_prefix}/include_seq/
 
 %files
 %{_prefix}/lib/*
+%{_prefix}/libseq/*
 %{_prefix}/include/*
 %{_prefix}/include_seq/*
 
