@@ -32,7 +32,7 @@ This is the Code_Aster specific package, which provides the correct PETSc lib fo
 %setup -q
 
 %build
-PETSC_ARCH=arch-linux2-c-opt ./config/configure.py --LIBS="-L%{aster_libs}/scotch-6.0.4/lib -lesmumps -lscotch -lscotcherr -lscotcherrexit -lscotchmetis" --with-openmp=1 --with-metis-dir=%{aster_libs}/metis-5.1.0 --with-mpi-dir=%{mpidir} --with-blas-lapack-lib=%{openblasdir}/libopenblas.a  --with-mumps-dir=%{aster_libs}/mumps-5.0.2-openmpi/ --download-hypre=no --download-ml=no --with-debugging=0 COPTFLAGS=-O2 CXXOPTFLAGS=-O2 FOPTFLAGS=-O2 --with-ssl=0 --configModules=PETSc.Configure --optionsModule=PETSc.compilerOptions  --with-x=0   --with-scalapack=1 --with-scalapack-dir=%{scalapackdir} --with-shared-libraries=0 --prefix=%{_prefix}
+PETSC_ARCH=arch-linux2-c-opt ./config/configure.py --LIBS="-L%{aster_libs}/%{scotch_lib}/lib -lesmumps -lscotch -lscotcherr -lscotcherrexit -lscotchmetis" --with-openmp=1 --with-metis-dir=%{aster_libs}/%{metis_lib} --with-mpi-dir=%{mpidir} --with-blas-lapack-lib=%{openblasdir}/libopenblas.a  --with-mumps-dir=%{aster_libs}/%{mumps_lib}-openmpi/ --download-hypre=no --download-ml=no --with-debugging=0 COPTFLAGS=-O2 CXXOPTFLAGS=-O2 FOPTFLAGS=-O2 --with-ssl=0 --configModules=PETSc.Configure --optionsModule=PETSc.compilerOptions  --with-x=0   --with-scalapack=1 --with-scalapack-dir=%{scalapackdir} --with-shared-libraries=0 --prefix=%{_prefix}
 
 make V=1
 
