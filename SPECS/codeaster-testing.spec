@@ -1,7 +1,7 @@
 %define version %{major_version}.%{sub_version}
 %define debug_package %{nil}
 %global _prefix %{aster_root}/%{major_version}
-%global config_file codeaster_fedora_gnu_config
+%global config_file codeaster_testing_fedora_gnu_config
 
 Name:           codeaster-stable
 Version:        %{version}
@@ -13,7 +13,7 @@ URL:            http://www.code-aster.org
 Source0:        codeaster-stable-%{version}.tar.gz
 Source1:        %{config_file}.py
 
-Requires:  codeaster-metis codeaster-scotch codeaster-frontend codeaster-mfront
+Requires:  codeaster-testing-metis codeaster-testing-scotch codeaster-frontend codeaster-mfront
 Requires:  openblas openblas-static openblas-devel
 
 %description
@@ -50,6 +50,8 @@ sed --in-place '\|vers : %{major_version}:%{aster_root}/%{major_version}/share/a
 #rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Sat Mar 3 2017 Stefan Reiterer 13.3
+- Adaption for fedora (personal)
 * Wed Feb 8 2017 Stefan Reiterer 12.7
 - Adaption for centos (personal)
 * Thu May 12 2016 Stefan Reiterer
