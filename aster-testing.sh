@@ -5,8 +5,8 @@
 source "$(dirname "$0")"/variables.sh
 export ASTER_TESTING_FULL=${ASTER_TESTING_VER}.${ASTER_TESTING_SUB_VER}
 
-#copy_pkg_type_testing aster-${ASTER_TESTING_FULL} aster-${ASTER_TESTING_FULL} testing-${ASTER_TESTING_VER} tgz
-cd ${SPEC_DIR}
+copy_pkg_type_testing aster-${ASTER_TESTING_FULL} aster-${ASTER_TESTING_FULL} testing-${ASTER_TESTING_VER} tgz
+#cd ${SPEC_DIR}
 export LD_LIBRARY_PATH=${ASTER_LIBS}/${MFRONT}/lib:$LD_LIBRARY_PATH
 export PATH=${ASTER_LIBS}/${MFRONT}/bin:$PATH
 
