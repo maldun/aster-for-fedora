@@ -12,7 +12,7 @@ License:        MIT
 URL:            http://www.mcs.anl.gov/petsc/
 Source0:        codeaster-testing-petsc-openmpi-%{version}.tar.gz
 
-Requires:	codeaster-testing-metis codeaster-testing-scotch  codeaster-scalapack-openmpi codeaster-hdf5
+Requires:	codeaster-testing-metis codeaster-testing-scotch codeaster-testing-mumps codeaster-scalapack-openmpi codeaster-hdf5
 Requires:  gcc-c++ gcc-gfortran
 Requires:  openblas openblas-static openblas-devel openmpi openmpi-devel openblas-devel
 BuildRequires:  openssl-devel zlib-devel
